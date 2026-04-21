@@ -2,8 +2,10 @@
 
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useLoading } from "@/context/LoadingContext";
 
 export default function LoadingScreen() {
+  const { setIsLoading: setGlobalLoading } = useLoading();
   const [isLoading, setIsLoading] = useState(true);
   const [progress, setProgress] = useState(0);
 
@@ -20,12 +22,15 @@ export default function LoadingScreen() {
       setProgress(nextProgress);
       if (nextProgress >= 100) {
         clearInterval(timer);
-        setTimeout(() => setIsLoading(false), 500);
+        setTimeout(() => {
+          setIsLoading(false);
+          setGlobalLoading(false);
+        }, 500);
       }
     }, interval);
 
     return () => clearInterval(timer);
-  }, []);
+  }, [setGlobalLoading]);
 
   return (
     <AnimatePresence>

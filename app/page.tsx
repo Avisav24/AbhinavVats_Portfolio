@@ -430,7 +430,10 @@ export default function Home() {
           <div className="mb-14 w-full">
             <ScrollVelocity
               texts={[
-                <span key="skills" className="font-condiment text-[#6FFF00] text-[48px] md:text-[80px] font-bold">
+                <span
+                  key="skills"
+                  className="font-condiment text-[#6FFF00] text-[48px] md:text-[80px] font-bold"
+                >
                   SKILLS
                 </span>,
                 "Python  •  FastAPI  •  PyTorch  •  TensorFlow  •  TypeScript  •  React  •  Next.js  •  AWS  •  Docker  •  PostgreSQL  •  MongoDB",

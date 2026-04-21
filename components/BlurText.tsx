@@ -2,6 +2,7 @@
 
 import { motion } from "motion/react";
 import { useEffect, useMemo, useRef, useState } from "react";
+import { useLoading } from "@/context/LoadingContext";
 
 const buildKeyframes = (
   from: Record<string, string | number>,
@@ -52,9 +53,11 @@ export default function BlurText({
   const elements = animateBy === "words" ? text.split(" ") : text.split("");
   const [inView, setInView] = useState(false);
   const ref = useRef<HTMLSpanElement | null>(null);
+  const { isLoading } = useLoading();
 
   useEffect(() => {
-    if (!ref.current) return;
+    // Only enable observer after loading is complete
+    if (isLoading || !ref.current) return;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -68,7 +71,7 @@ export default function BlurText({
 
     observer.observe(ref.current);
     return () => observer.disconnect();
-  }, [threshold, rootMargin]);
+  }, [threshold, rootMargin, isLoading]);
 
   const defaultFrom = useMemo(
     () =>

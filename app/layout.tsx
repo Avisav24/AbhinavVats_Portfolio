@@ -6,6 +6,7 @@ import LenisWrapper from "@/components/LenisWrapper";
 import CustomCursor from "@/components/CustomCursor";
 import LoadingScreen from "@/components/LoadingScreen";
 import SoundManager from "@/components/SoundManager";
+import { LoadingProvider } from "@/context/LoadingContext";
 
 const anton = Anton({
   weight: "400",
@@ -34,11 +35,13 @@ export default function RootLayout({
       <body
         className={`${anton.variable} ${condiment.variable} antialiased bg-bg-main text-cream flex min-h-screen flex-col`}
       >
-        <LoadingScreen />
-        <SoundManager />
-        <CustomCursor />
-        <div className="fixed inset-0 z-50 pointer-events-none mix-blend-lighten opacity-60 bg-[url('/texture.png')] bg-cover bg-center" />
-        <LenisWrapper>{children}</LenisWrapper>
+        <LoadingProvider>
+          <LoadingScreen />
+          <SoundManager />
+          <CustomCursor />
+          <div className="fixed inset-0 z-50 pointer-events-none mix-blend-lighten opacity-60 bg-[url('/texture.png')] bg-cover bg-center" />
+          <LenisWrapper>{children}</LenisWrapper>
+        </LoadingProvider>
       </body>
     </html>
   );
