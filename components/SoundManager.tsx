@@ -13,30 +13,30 @@ export default function SoundManager() {
     // Initialize AudioContext
     const initAudioContext = () => {
       if (audioCtxRef.current) return;
-      const AudioContext = window.AudioContext || (window as any).webkitAudioContext;
+      const AudioContext =
+        window.AudioContext || (window as any).webkitAudioContext;
       if (AudioContext) {
         audioCtxRef.current = new AudioContext();
       }
     };
 
     const unlockAudio = async () => {
-      if (isInitialized.current) return;
-
       initAudioContext();
-      
+
       if (audioCtxRef.current?.state === "suspended") {
         await audioCtxRef.current.resume().catch(console.error);
       }
 
-      if (audioRef.current) {
+      if (audioRef.current && isPlaying) {
         audioRef.current.volume = 0.3;
         try {
           await audioRef.current.play();
-          setIsPlaying(true);
-          isInitialized.current = true;
           removeUnlockListeners();
         } catch (err) {
-          console.warn("Ambient audio blocked. Waiting for user gesture...", err);
+          console.warn(
+            "Ambient audio blocked. Waiting for user gesture...",
+            err,
+          );
         }
       }
     };
@@ -49,21 +49,33 @@ export default function SoundManager() {
 
     // Try to play immediately
     initAudioContext();
-    if (audioRef.current && !isInitialized.current) {
+    if (audioRef.current) {
       audioRef.current.volume = 0.3;
-      audioRef.current.play().catch(() => {
-        // If autoplay fails, wait for user gesture
-        window.addEventListener("click", unlockAudio);
-        window.addEventListener("touchstart", unlockAudio);
-        window.addEventListener("keydown", unlockAudio);
-      });
-      isInitialized.current = true;
+      const playPromise = audioRef.current.play();
+      if (playPromise !== undefined) {
+        playPromise
+          .then(() => {
+            setIsPlaying(true);
+          })
+          .catch(() => {
+            // Keep the toggle ON visually as requested, but wait for interaction to actually play
+            setIsPlaying(true);
+            window.addEventListener("click", unlockAudio);
+            window.addEventListener("touchstart", unlockAudio);
+            window.addEventListener("keydown", unlockAudio);
+          });
+      }
     }
 
-    // Sync state with audio element
+    // Sync state with audio element ONLY if it's explicitly paused by user
     const audio = audioRef.current;
     const handlePlay = () => setIsPlaying(true);
-    const handlePause = () => setIsPlaying(false);
+    const handlePause = () => {
+      // Don't auto-set to false if blocked by browser
+      if (audio && audio.currentTime > 0 && !audio.ended) {
+        setIsPlaying(false);
+      }
+    };
 
     audio?.addEventListener("play", handlePlay);
     audio?.addEventListener("pause", handlePause);
@@ -101,7 +113,11 @@ export default function SoundManager() {
   useEffect(() => {
     const handleMouseOver = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
-      if (target.closest("a") || target.closest("button") || target.closest("[data-hover-sfx]")) {
+      if (
+        target.closest("a") ||
+        target.closest("button") ||
+        target.closest("[data-hover-sfx]")
+      ) {
         playHoverSfx();
       }
     };
@@ -115,11 +131,13 @@ export default function SoundManager() {
 
     if (isPlaying) {
       audioRef.current.pause();
+      setIsPlaying(false);
     } else {
       audioRef.current.play().catch(console.error);
       if (audioCtxRef.current?.state === "suspended") {
         audioCtxRef.current.resume();
       }
+      setIsPlaying(true);
     }
   };
 
