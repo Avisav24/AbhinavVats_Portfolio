@@ -414,9 +414,9 @@ export default function Home() {
           <div className="absolute top-0 bottom-0 left-0 w-16 md:w-32 bg-gradient-to-r from-[#010828] to-transparent z-10 pointer-events-none" />
           <div className="absolute top-0 bottom-0 right-0 w-16 md:w-32 bg-gradient-to-l from-[#010828] to-transparent z-10 pointer-events-none" />
 
-          {/* Line 1: Green, scrolling left - Speed 40s */}
+          {/* Line 1: Green, scrolling left - Speed 100s */}
           <div className="py-2 md:py-3 w-full border-y border-white/5 border-dashed">
-            <div className="flex w-fit animate-marquee-left-40">
+            <div className="flex w-fit animate-marquee-left-100">
               <span className="font-condiment font-bold text-[#6FFF00] text-[32px] md:text-[50px] whitespace-nowrap pl-8">
                 skillsSkillsSkillsSkillsSkillsSkillsSkillsSkillsSkillsSkillsSkillsSkillsSkillsSkillsSkillsSkillsSkillsSkillsSkillsSkillsSkillsSkillsSkillsSkillsSkillsSkillsSkillsSkillsSkillsSkillsSkillsSkillsSkillsSkillsSkillsSkillsSkillsSkillsSkillsSkills
               </span>
@@ -426,9 +426,9 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Line 2: White, scrolling right - Speed 50s */}
+          {/* Line 2: White, scrolling right - Speed 120s */}
           <div className="py-2 md:py-3 w-full border-b border-white/5 border-dashed">
-            <div className="flex w-fit animate-marquee-right-50">
+            <div className="flex w-fit animate-marquee-right-120">
               <span className="font-condiment font-bold text-[#EFF4FF] text-[28px] md:text-[40px] whitespace-nowrap pl-8">
                 Python • FastAPI • PyTorch • TensorFlow • TypeScript • React • Next.js • AWS • Docker • PostgreSQL • MongoDB • Linux • GitHub Actions • CI/CD • Redis • Python • FastAPI • PyTorch • TensorFlow • TypeScript • React • Next.js • AWS • Docker • PostgreSQL • MongoDB • Linux • GitHub Actions • CI/CD • Redis 
               </span>
@@ -438,9 +438,9 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Line 3: White, scrolling left - Speed 60s */}
+          {/* Line 3: White, scrolling left - Speed 140s */}
           <div className="py-2 md:py-3 w-full border-b border-white/5 border-dashed">
-            <div className="flex w-fit animate-marquee-left-60">
+            <div className="flex w-fit animate-marquee-left-140">
               <span className="font-condiment font-bold text-[#EFF4FF] text-[28px] md:text-[40px] whitespace-nowrap pl-8">
                 Python • FastAPI • PyTorch • TensorFlow • TypeScript • React • Next.js • AWS • Docker • PostgreSQL • MongoDB • Linux • GitHub Actions • CI/CD • Redis • Python • FastAPI • PyTorch • TensorFlow • TypeScript • React • Next.js • AWS • Docker • PostgreSQL • MongoDB • Linux • GitHub Actions • CI/CD • Redis 
               </span>
