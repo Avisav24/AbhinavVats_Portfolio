@@ -137,11 +137,11 @@ button,
   .animate-marquee-left-20 {
     animation: marquee-left 20s linear infinite;
   }
-  
+
   .animate-marquee-right-25 {
     animation: marquee-right 25s linear infinite;
   }
-  
+
   .animate-marquee-left-30 {
     animation: marquee-left 30s linear infinite;
   }
@@ -149,11 +149,11 @@ button,
   .animate-marquee-left-40 {
     animation: marquee-left 40s linear infinite;
   }
-  
+
   .animate-marquee-right-50 {
     animation: marquee-right 50s linear infinite;
   }
-  
+
   .animate-marquee-left-60 {
     animation: marquee-left 60s linear infinite;
   }
@@ -161,11 +161,11 @@ button,
   .animate-marquee-left-100 {
     animation: marquee-left 100s linear infinite;
   }
-  
+
   .animate-marquee-right-120 {
     animation: marquee-right 120s linear infinite;
   }
-  
+
   .animate-marquee-left-140 {
     animation: marquee-left 140s linear infinite;
   }
