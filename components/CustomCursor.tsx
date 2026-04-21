@@ -7,7 +7,7 @@ const TRAIL_LENGTH = 15;
 export default function CustomCursor() {
   const cursorRef = useRef<HTMLDivElement>(null);
   const trailsRef = useRef<HTMLDivElement[]>([]);
-  const requestRef = useRef<number>();
+  const requestRef = useRef<number | null>(null);
   
   // Track mouse and cursor coordinates
   const mouse = useRef({ x: -1000, y: -1000 });
