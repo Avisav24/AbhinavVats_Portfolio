@@ -432,7 +432,7 @@ export default function Home() {
                 texts={[
                   "Python  •  FastAPI  •  PyTorch  •  TensorFlow  •  TypeScript  •  React  •  Next.js  •  AWS",
                 ]}
-                velocity={80}
+                velocity={-80}
                 className="font-grotesk font-bold text-[#EFF4FF] text-[32px] md:text-[56px] drop-shadow-[0_0_12px_rgba(111,255,0,0.18)]"
                 damping={50}
                 stiffness={380}
