@@ -176,7 +176,7 @@ export default function SplitText({
     },
   );
 
-  const Tag = tag || "p";
+  const Tag = (tag || "p") as any;
 
   return (
     <Tag

@@ -172,26 +172,30 @@ export default function Home() {
                 }}
               >
                 <h1 className="font-grotesk text-[32px] sm:text-[48px] md:text-[65px] lg:text-[80px] leading-[1.1] sm:leading-[1.15] drop-shadow-[0_8px_24px_rgba(0,0,0,1)] [text-shadow:0_4px_16px_rgba(0,0,0,0.8)] px-4">
-                  <BlurText
-                    text="Beyond Earth"
-                    className="justify-center"
-                    delay={140}
-                    animateBy="words"
-                    direction="top"
-                    threshold={0.1}
-                    rootMargin="0px"
-                    stepDuration={0.32}
-                  />
-                  <BlurText
-                    text="and the limits of the known"
-                    className="justify-center"
-                    delay={110}
-                    animateBy="words"
-                    direction="bottom"
-                    threshold={0.1}
-                    rootMargin="0px"
-                    stepDuration={0.32}
-                  />
+                  <span className="block">
+                    <BlurText
+                      text="Beyond Earth"
+                      className="justify-center"
+                      delay={140}
+                      animateBy="words"
+                      direction="top"
+                      threshold={0.1}
+                      rootMargin="0px"
+                      stepDuration={0.32}
+                    />
+                  </span>
+                  <span className="block">
+                    <BlurText
+                      text="and the limits of the known"
+                      className="justify-center"
+                      delay={110}
+                      animateBy="words"
+                      direction="bottom"
+                      threshold={0.1}
+                      rootMargin="0px"
+                      stepDuration={0.32}
+                    />
+                  </span>
                 </h1>
               </motion.div>
 
