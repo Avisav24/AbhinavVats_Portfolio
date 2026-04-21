@@ -21,12 +21,15 @@ export default function SoundManager() {
 
       // Trigger media playback immediately in the gesture handler.
       audioRef.current.volume = 0.4;
-      audioRef.current.play().then(() => {
-        setIsPlaying(true);
-      }).catch((err) => {
-        console.error("Ambient play failed:", err);
-        setIsPlaying(false);
-      });
+      audioRef.current
+        .play()
+        .then(() => {
+          setIsPlaying(true);
+        })
+        .catch((err) => {
+          console.error("Ambient play failed:", err);
+          setIsPlaying(false);
+        });
 
       // Resume SFX engine without blocking the ambient play call.
       if (audioCtxRef.current && audioCtxRef.current.state === "suspended") {
@@ -111,7 +114,7 @@ export default function SoundManager() {
 
       <button
         onClick={toggle}
-        className="fixed bottom-8 right-8 z-[100] w-12 h-12 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center hover:bg-white/20 transition-all active:scale-95"
+        className="fixed bottom-8 right-8 z-[100] w-12 h-12 rounded-[8px] bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center hover:bg-white/20 transition-all active:scale-95"
         aria-label="Toggle Sound"
       >
         {isPlaying ? (

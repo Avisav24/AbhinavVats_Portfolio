@@ -84,7 +84,7 @@ export default function Projects() {
           {projects.map((proj, idx) => (
             <div
               key={idx}
-              className="project-card relative flex flex-col w-[300px] sm:w-[400px] md:w-[500px] h-[640px] bg-surface border border-border rounded-[15px] overflow-hidden shrink-0 transition-all duration-250 cursor-none group hover:scale-[1.025]"
+              className="project-card relative flex flex-col w-[300px] sm:w-[400px] md:w-[500px] h-[640px] bg-surface border border-border rounded-[8px] overflow-hidden shrink-0 transition-all duration-250 cursor-none group hover:scale-[1.025]"
             >
               <div className="w-full h-[240px] bg-surfaceRaised relative">
                 <proj.CanvasComponent className="w-full h-full pointer-events-none" />

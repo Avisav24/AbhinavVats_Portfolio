@@ -117,7 +117,7 @@ export default function Home() {
             <div className="hidden lg:flex flex-row items-center gap-3 shrink-0">
               <a
                 href="mailto:abhinavvats.dev@gmail.com"
-                className="w-[40px] h-[40px] rounded-[0.75rem] flex items-center justify-center hover:bg-white/10 transition-colors drop-shadow-[0_4px_8px_rgba(0,0,0,0.5)]"
+                className="w-[40px] h-[40px] rounded-[8px] flex items-center justify-center hover:bg-white/10 transition-colors drop-shadow-[0_4px_8px_rgba(0,0,0,0.5)]"
               >
                 <Mail className="w-[16px] h-[16px]" />
               </a>
@@ -125,7 +125,7 @@ export default function Home() {
                 href="https://www.linkedin.com/in/abhinav-vats25/"
                 target="_blank"
                 rel="noreferrer"
-                className="w-[40px] h-[40px] rounded-[0.75rem] flex items-center justify-center hover:bg-white/10 transition-colors drop-shadow-[0_4px_8px_rgba(0,0,0,0.5)]"
+                className="w-[40px] h-[40px] rounded-[8px] flex items-center justify-center hover:bg-white/10 transition-colors drop-shadow-[0_4px_8px_rgba(0,0,0,0.5)]"
               >
                 <svg
                   className="w-[16px] h-[16px]"
@@ -145,7 +145,7 @@ export default function Home() {
                 href="https://github.com/Avisav24"
                 target="_blank"
                 rel="noreferrer"
-                className="w-[40px] h-[40px] rounded-[0.75rem] flex items-center justify-center hover:bg-white/10 transition-colors drop-shadow-[0_4px_8px_rgba(0,0,0,0.5)]"
+                className="w-[40px] h-[40px] rounded-[8px] flex items-center justify-center hover:bg-white/10 transition-colors drop-shadow-[0_4px_8px_rgba(0,0,0,0.5)]"
               >
                 <Github className="w-[16px] h-[16px]" />
               </a>
@@ -207,7 +207,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.7 }}
-                className="mt-8 mx-auto w-full max-w-[320px] bg-white/10 backdrop-blur-[15px] border border-white/20 shadow-lg rounded-[15px] px-8 py-4 font-grotesk text-[16px] text-white hover:text-[#6FFF00] hover:border-[#6FFF00]/50 transition-all uppercase flex items-center justify-center gap-3"
+                className="mt-8 mx-auto w-full max-w-[320px] bg-white/10 backdrop-blur-[15px] border border-white/20 shadow-lg rounded-[8px] px-8 py-4 font-grotesk text-[16px] text-white hover:text-[#6FFF00] hover:border-[#6FFF00]/50 transition-all uppercase flex items-center justify-center gap-3"
               >
                 <svg
                   width="20"
@@ -233,7 +233,7 @@ export default function Home() {
             <div className="flex space-x-4 lg:hidden mt-10 justify-center">
               <a
                 href="mailto:abhinavvats.dev@gmail.com"
-                className="liquid-glass w-[56px] h-[56px] rounded-[15px] flex items-center justify-center hover:bg-white/10 transition-colors"
+                className="liquid-glass w-[56px] h-[56px] rounded-[8px] flex items-center justify-center hover:bg-white/10 transition-colors"
               >
                 <Mail className="w-[20px] h-[20px]" />
               </a>
@@ -241,7 +241,7 @@ export default function Home() {
                 href="https://www.linkedin.com/in/abhinav-vats25/"
                 target="_blank"
                 rel="noreferrer"
-                className="liquid-glass w-[56px] h-[56px] rounded-[15px] flex items-center justify-center hover:bg-white/10 transition-colors"
+                className="liquid-glass w-[56px] h-[56px] rounded-[8px] flex items-center justify-center hover:bg-white/10 transition-colors"
               >
                 <svg
                   className="w-[20px] h-[20px]"
@@ -261,7 +261,7 @@ export default function Home() {
                 href="https://github.com/Avisav24"
                 target="_blank"
                 rel="noreferrer"
-                className="liquid-glass w-[56px] h-[56px] rounded-[15px] flex items-center justify-center hover:bg-white/10 transition-colors"
+                className="liquid-glass w-[56px] h-[56px] rounded-[8px] flex items-center justify-center hover:bg-white/10 transition-colors"
               >
                 <Github className="w-[20px] h-[20px]" />
               </a>
@@ -303,8 +303,8 @@ export default function Home() {
               </span>
             </motion.div>
             <motion.p
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
+              initial={{ opacity: 0, filter: "blur(5px)" }}
+              whileInView={{ opacity: 1, filter: "blur(5px)" }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.4 }}
               className="font-mono text-[14px] md:text-[16px] max-w-[266px] leading-[1.5]"
@@ -314,7 +314,7 @@ export default function Home() {
             </motion.p>
           </div>
 
-          <div className="flex flex-col lg:flex-row justify-between w-full mt-12 md:mt-24 gap-8 p-6 md:p-8 rounded-[15px] bg-[rgba(20,25,40,0.55)] backdrop-blur-[15px] border border-white/15 shadow-lg">
+          <div className="flex flex-col lg:flex-row justify-between w-full mt-12 md:mt-24 gap-8 p-6 md:p-8 rounded-[8px] bg-[rgba(20,25,40,0.55)] backdrop-blur-[15px] border border-white/15 shadow-lg">
             <div className="flex flex-col space-y-6 flex-1 text-[#EFF4FF]">
               <div>
                 <h3 className="font-grotesk text-[24px] text-[#6FFF00] mb-2">
@@ -466,7 +466,7 @@ export default function Home() {
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: i * 0.1 }}
-                className="liquid-glass backdrop-blur-[25px] rounded-[15px] p-[32px] hover:bg-[#6FFF00]/10 hover:border-[#6FFF00]/50 hover:shadow-[0_0_30px_rgba(111,255,0,0.1)] hover:-translate-y-2 transition-all duration-300 w-full group flex flex-col justify-between"
+                className="liquid-glass backdrop-blur-[25px] rounded-[8px] p-[32px] hover:bg-[#6FFF00]/10 hover:border-[#6FFF00]/50 hover:shadow-[0_0_30px_rgba(111,255,0,0.1)] hover:-translate-y-2 transition-all duration-300 w-full group flex flex-col justify-between"
                 data-hover-sfx="true"
               >
                 <div>
@@ -540,7 +540,7 @@ export default function Home() {
               whileInView={{ y: 0, opacity: 1, filter: "blur(0px)" }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="liquid-glass rounded-[15px] p-[32px] hover:bg-white/10 transition-colors w-full flex flex-col md:flex-row justify-between items-start md:items-center"
+              className="liquid-glass rounded-[8px] p-[32px] hover:bg-white/10 transition-colors w-full flex flex-col md:flex-row justify-between items-start md:items-center"
             >
               <div>
                 <div className="text-[#EFF4FF]/50 text-[14px] mb-2">
@@ -565,7 +565,7 @@ export default function Home() {
                   </li>
                 </ul>
               </div>
-              <div className="mt-6 md:mt-0 liquid-glass rounded-[15px] px-6 py-3 border border-[#6FFF00]/20 flex items-center justify-center">
+              <div className="mt-6 md:mt-0 liquid-glass rounded-[8px] px-6 py-3 border border-[#6FFF00]/20 flex items-center justify-center">
                 <span className="text-[#6FFF00] font-bold text-[14px]">
                   Looping Loons
                 </span>
@@ -578,7 +578,7 @@ export default function Home() {
               whileInView={{ y: 0, opacity: 1, filter: "blur(0px)" }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="liquid-glass rounded-[15px] p-[32px] hover:bg-white/10 transition-colors w-full flex flex-col md:flex-row justify-between items-start md:items-center"
+              className="liquid-glass rounded-[8px] p-[32px] hover:bg-white/10 transition-colors w-full flex flex-col md:flex-row justify-between items-start md:items-center"
             >
               <div>
                 <div className="text-[#EFF4FF]/50 text-[14px] mb-2">
@@ -607,7 +607,7 @@ export default function Home() {
                   </li>
                 </ul>
               </div>
-              <div className="mt-6 md:mt-0 liquid-glass rounded-[15px] px-6 py-3 border border-[#6FFF00]/20 flex items-center justify-center">
+              <div className="mt-6 md:mt-0 liquid-glass rounded-[8px] px-6 py-3 border border-[#6FFF00]/20 flex items-center justify-center">
                 <span className="text-[#6FFF00] font-bold text-[14px]">
                   Edunet Foundation
                 </span>
@@ -641,7 +641,7 @@ export default function Home() {
                 href="https://github.com/Avisav24"
                 target="_blank"
                 rel="noreferrer"
-                className="flex flex-col items-start gap-4 liquid-glass px-8 py-4 rounded-[15px] hover:bg-white/10 transition-colors pointer-events-auto"
+                className="flex flex-col items-start gap-4 liquid-glass px-8 py-4 rounded-[8px] hover:bg-white/10 transition-colors pointer-events-auto"
               >
                 <div className="flex items-center space-x-6">
                   <div className="relative">
@@ -672,10 +672,10 @@ export default function Home() {
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="liquid-glass rounded-[15px] p-[18px] hover:bg-white/10 transition-colors group cursor-pointer flex flex-col h-full"
+              className="liquid-glass rounded-[8px] p-[18px] hover:bg-white/10 transition-colors group cursor-pointer flex flex-col h-full"
               data-hover-sfx="true"
             >
-              <div className="relative w-full pb-[100%] rounded-[15px] overflow-hidden mb-4 relative z-0">
+              <div className="relative w-full pb-[100%] rounded-[8px] overflow-hidden mb-4 relative z-0">
                 <video
                   autoPlay
                   loop
@@ -695,7 +695,7 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              <div className="liquid-glass rounded-[15px] px-5 py-4 flex justify-between items-center mt-auto">
+              <div className="liquid-glass rounded-[8px] px-5 py-4 flex justify-between items-center mt-auto">
                 <div>
                   <div className="text-[11px] text-[#EFF4FF]/70 mb-1 tracking-wider">
                     TECH STACK:
@@ -706,7 +706,7 @@ export default function Home() {
                   href="https://github.com/Avisav24/NSE_Data_Downloader"
                   target="_blank"
                   rel="noreferrer"
-                  className="w-[48px] h-[48px] rounded-full bg-[#6FFF00] flex items-center justify-center shadow-lg shadow-[#6FFF00]/50 group-hover:scale-110 transition-transform text-black"
+                  className="w-[48px] h-[48px] rounded-[8px] bg-[#6FFF00] flex items-center justify-center shadow-lg shadow-[#6FFF00]/50 group-hover:scale-110 transition-transform text-black"
                 >
                   <ChevronRight />
                 </a>
@@ -719,10 +719,10 @@ export default function Home() {
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.25 }}
-              className="liquid-glass rounded-[15px] p-[18px] hover:bg-white/10 transition-colors group cursor-pointer flex flex-col h-full"
+              className="liquid-glass rounded-[8px] p-[18px] hover:bg-white/10 transition-colors group cursor-pointer flex flex-col h-full"
               data-hover-sfx="true"
             >
-              <div className="relative w-full pb-[100%] rounded-[15px] overflow-hidden mb-4 relative z-0">
+              <div className="relative w-full pb-[100%] rounded-[8px] overflow-hidden mb-4 relative z-0">
                 <video
                   autoPlay
                   loop
@@ -742,7 +742,7 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              <div className="liquid-glass rounded-[15px] px-5 py-4 flex justify-between items-center mt-auto">
+              <div className="liquid-glass rounded-[8px] px-5 py-4 flex justify-between items-center mt-auto">
                 <div>
                   <div className="text-[11px] text-[#EFF4FF]/70 mb-1 tracking-wider">
                     TECH STACK:
@@ -755,7 +755,7 @@ export default function Home() {
                   href="https://github.com/Avisav24/Indian_Election_Predictor_V2"
                   target="_blank"
                   rel="noreferrer"
-                  className="w-[48px] h-[48px] rounded-full bg-[#6FFF00] flex items-center justify-center shadow-lg shadow-[#6FFF00]/50 group-hover:scale-110 transition-transform text-black"
+                  className="w-[48px] h-[48px] rounded-[8px] bg-[#6FFF00] flex items-center justify-center shadow-lg shadow-[#6FFF00]/50 group-hover:scale-110 transition-transform text-black"
                 >
                   <ChevronRight />
                 </a>
@@ -768,10 +768,10 @@ export default function Home() {
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="liquid-glass backdrop-blur-[25px] rounded-[15px] p-[18px] hover:bg-white/10 transition-colors group cursor-pointer flex flex-col h-full"
+              className="liquid-glass backdrop-blur-[25px] rounded-[8px] p-[18px] hover:bg-white/10 transition-colors group cursor-pointer flex flex-col h-full"
               data-hover-sfx="true"
             >
-              <div className="relative w-full pb-[100%] rounded-[15px] overflow-hidden mb-4 relative z-0">
+              <div className="relative w-full pb-[100%] rounded-[8px] overflow-hidden mb-4 relative z-0">
                 <video
                   autoPlay
                   loop
@@ -791,7 +791,7 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              <div className="liquid-glass backdrop-blur-[25px] rounded-[15px] px-5 py-4 flex justify-between items-center mt-auto">
+              <div className="liquid-glass backdrop-blur-[25px] rounded-[8px] px-5 py-4 flex justify-between items-center mt-auto">
                 <div>
                   <div className="text-[11px] text-[#EFF4FF]/70 mb-1 tracking-wider">
                     TECH STACK:
@@ -804,7 +804,7 @@ export default function Home() {
                   href="https://github.com/Avisav24/ShopMind"
                   target="_blank"
                   rel="noreferrer"
-                  className="w-[48px] h-[48px] rounded-full bg-[#6FFF00] flex items-center justify-center shadow-lg shadow-[#6FFF00]/50 group-hover:scale-110 transition-transform text-black"
+                  className="w-[48px] h-[48px] rounded-[8px] bg-[#6FFF00] flex items-center justify-center shadow-lg shadow-[#6FFF00]/50 group-hover:scale-110 transition-transform text-black"
                 >
                   <ChevronRight />
                 </a>
@@ -857,7 +857,7 @@ export default function Home() {
           className="absolute left-1/2 -translate-x-1/2 bottom-[12%] md:bottom-[15%] flex flex-col md:flex-row items-center gap-8 z-20"
         >
           <div
-            className="liquid-glass rounded-[15px] flex flex-row"
+            className="liquid-glass rounded-[8px] flex flex-row"
             style={{
               backdropFilter: "blur(50px)",
               WebkitBackdropFilter: "blur(50px)",
@@ -953,7 +953,7 @@ export default function Home() {
                 }
               }
             }}
-            className="liquid-glass backdrop-blur-[25px] rounded-[15px] p-4 md:p-5 flex flex-col md:flex-row items-center gap-4 h-full md:h-[5rem]"
+            className="liquid-glass backdrop-blur-[25px] rounded-[8px] p-4 md:p-5 flex flex-col md:flex-row items-center gap-4 h-full md:h-[5rem]"
           >
             <input
               name="message"
@@ -974,7 +974,7 @@ export default function Home() {
             />
             <button
               type="submit"
-              className="uppercase font-grotesk text-[14px] md:text-[18px] bg-[#6FFF00]/10 hover:bg-[#6FFF00]/20 border border-[#6FFF00]/30 text-[#6FFF00] px-8 rounded-lg transition-colors w-full md:w-auto h-[48px] flex items-center justify-center cursor-pointer hover:cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+              className="uppercase font-grotesk text-[14px] md:text-[18px] bg-[#6FFF00]/10 hover:bg-[#6FFF00]/20 border border-[#6FFF00]/30 text-[#6FFF00] px-8 rounded-[8px] transition-colors w-full md:w-auto h-[48px] flex items-center justify-center cursor-pointer hover:cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
             >
               Send
             </button>
