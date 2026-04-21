@@ -409,15 +409,19 @@ export default function Home() {
         </div>
 
         {/* Full screen edge-to-edge ticker without gaps */}
-        <div className="w-full bg-[#010828] py-0 overflow-hidden flex flex-col gap-0">
+        <div className="relative w-full bg-[#010828] py-0 overflow-hidden flex flex-col gap-0">
+          {/* Vignette overlays for the marquee */}
+          <div className="absolute top-0 bottom-0 left-0 w-16 md:w-32 bg-gradient-to-r from-[#010828] to-transparent z-10 pointer-events-none" />
+          <div className="absolute top-0 bottom-0 right-0 w-16 md:w-32 bg-gradient-to-l from-[#010828] to-transparent z-10 pointer-events-none" />
+
           {/* Line 1: Green, scrolling left - Speed 20s */}
           <div className="py-2 md:py-3 w-full border-y border-white/5 border-dashed">
             <div className="flex w-fit animate-marquee-left-20">
               <span className="font-grotesk font-bold text-[#6FFF00] text-[24px] md:text-[40px] whitespace-nowrap pl-8">
-                SKILLS SKILLS SKILLS SKILLS SKILLS SKILLS SKILLS SKILLS SKILLS SKILLS SKILLS SKILLS SKILLS SKILLS SKILLS SKILLS SKILLS SKILLS SKILLS SKILLS 
+                Skills Skills Skills Skills Skills Skills Skills Skills Skills Skills Skills Skills Skills Skills Skills Skills Skills Skills Skills Skills Skills Skills Skills Skills Skills Skills Skills Skills Skills Skills Skills Skills Skills Skills Skills Skills Skills Skills Skills Skills
               </span>
               <span className="font-grotesk font-bold text-[#6FFF00] text-[24px] md:text-[40px] whitespace-nowrap pl-8">
-                SKILLS SKILLS SKILLS SKILLS SKILLS SKILLS SKILLS SKILLS SKILLS SKILLS SKILLS SKILLS SKILLS SKILLS SKILLS SKILLS SKILLS SKILLS SKILLS SKILLS 
+                Skills Skills Skills Skills Skills Skills Skills Skills Skills Skills Skills Skills Skills Skills Skills Skills Skills Skills Skills Skills Skills Skills Skills Skills Skills Skills Skills Skills Skills Skills Skills Skills Skills Skills Skills Skills Skills Skills Skills Skills
               </span>
             </div>
           </div>
