@@ -7,6 +7,7 @@ export default function SoundManager() {
   const [isPlaying, setIsPlaying] = useState(true);
   const audioRef = useRef<HTMLAudioElement>(null);
   const audioCtxRef = useRef<AudioContext | null>(null);
+  const shouldPlayRef = useRef(true);
 
   useEffect(() => {
     // Initialize SFX Engine
@@ -16,37 +17,62 @@ export default function SoundManager() {
       audioCtxRef.current = new AudioContext();
     }
 
-    const unlockAudio = () => {
+    const tryPlayAmbient = async () => {
       if (!audioRef.current) return;
-
-      // Trigger media playback immediately in the gesture handler.
       audioRef.current.volume = 0.4;
-      audioRef.current
-        .play()
-        .then(() => {
-          setIsPlaying(true);
-        })
-        .catch((err) => {
-          console.error("Ambient play failed:", err);
-          setIsPlaying(false);
-        });
 
-      // Resume SFX engine without blocking the ambient play call.
+      try {
+        await audioRef.current.play();
+      } catch (err) {
+        console.error("Ambient play failed:", err);
+        throw err;
+      }
+    };
+
+    const unlockAudio = async () => {
+      if (!audioRef.current || !shouldPlayRef.current) return;
+
+      // Resume SFX engine and then start ambient audio.
       if (audioCtxRef.current && audioCtxRef.current.state === "suspended") {
-        audioCtxRef.current.resume().catch((err) => {
+        await audioCtxRef.current.resume().catch((err) => {
           console.error("AudioContext resume failed:", err);
         });
       }
 
-      // Remove listeners once an unlock attempt has been made.
-      window.removeEventListener("click", unlockAudio);
-      window.removeEventListener("touchstart", unlockAudio);
-      window.removeEventListener("scroll", unlockAudio);
+      try {
+        await tryPlayAmbient();
+
+        // Remove listeners only after playback actually starts.
+        window.removeEventListener("click", unlockAudio);
+        window.removeEventListener("touchstart", unlockAudio);
+        window.removeEventListener("keydown", unlockAudio);
+      } catch {
+        // Keep listeners active so the next user gesture can retry.
+      }
     };
 
     window.addEventListener("click", unlockAudio);
     window.addEventListener("touchstart", unlockAudio);
-    window.addEventListener("scroll", unlockAudio);
+    window.addEventListener("keydown", unlockAudio);
+
+    const audio = audioRef.current;
+    const syncPlay = () => setIsPlaying(true);
+    const syncPause = () => setIsPlaying(false);
+
+    audio?.addEventListener("play", syncPlay);
+    audio?.addEventListener("pause", syncPause);
+    audio?.addEventListener("ended", syncPause);
+
+    const handleVisibilityChange = () => {
+      if (
+        document.visibilityState === "visible" &&
+        shouldPlayRef.current &&
+        audioRef.current?.paused
+      ) {
+        unlockAudio();
+      }
+    };
+    document.addEventListener("visibilitychange", handleVisibilityChange);
 
     // Global Hover SFX
     const handleMouseOver = (e: MouseEvent) => {
@@ -64,8 +90,12 @@ export default function SoundManager() {
     return () => {
       window.removeEventListener("click", unlockAudio);
       window.removeEventListener("touchstart", unlockAudio);
-      window.removeEventListener("scroll", unlockAudio);
+      window.removeEventListener("keydown", unlockAudio);
       window.removeEventListener("mouseover", handleMouseOver);
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+      audio?.removeEventListener("play", syncPlay);
+      audio?.removeEventListener("pause", syncPause);
+      audio?.removeEventListener("ended", syncPause);
     };
   }, []);
 
@@ -94,11 +124,14 @@ export default function SoundManager() {
   const toggle = () => {
     if (!audioRef.current) return;
     if (isPlaying) {
+      shouldPlayRef.current = false;
       audioRef.current.pause();
     } else {
-      audioRef.current.play().catch(console.error);
+      shouldPlayRef.current = true;
+      audioRef.current.play().catch((err) => {
+        console.error("Manual ambient play failed:", err);
+      });
     }
-    setIsPlaying(!isPlaying);
   };
 
   return (
