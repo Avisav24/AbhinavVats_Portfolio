@@ -438,12 +438,12 @@ export default function Home() {
                     SKILLS
                   </span>,
                 ]}
-                velocity={50}
-                className="font-grotesk font-bold text-[#EFF4FF] text-[28px] md:text-[56px] drop-shadow-[0_0_12px_rgba(111,255,0,0.18)]"
+                velocity={80}
+                className="font-grotesk font-bold text-[#EFF4FF] text-[48px] md:text-[80px] drop-shadow-[0_0_12px_rgba(111,255,0,0.18)]"
                 damping={50}
                 stiffness={380}
-                numCopies={3}
-                parallaxClassName="py-2 md:py-3"
+                numCopies={8}
+                parallaxClassName="py-4 md:py-6"
                 scrollerClassName="flex items-center justify-center text-center"
                 parallaxStyle={{ width: "100%" }}
                 scrollerStyle={{ width: "100%" }}
@@ -452,12 +452,12 @@ export default function Home() {
                 texts={[
                   "Python  •  FastAPI  •  PyTorch  •  TensorFlow  •  TypeScript  •  React  •  Next.js  •  AWS  •  Docker  •  PostgreSQL  •  MongoDB",
                 ]}
-                velocity={50}
-                className="font-grotesk font-bold text-[#EFF4FF] text-[24px] md:text-[48px] drop-shadow-[0_0_12px_rgba(111,255,0,0.18)]"
+                velocity={80}
+                className="font-grotesk font-bold text-[#EFF4FF] text-[32px] md:text-[56px] drop-shadow-[0_0_12px_rgba(111,255,0,0.18)]"
                 damping={50}
                 stiffness={380}
-                numCopies={3}
-                parallaxClassName="py-2 md:py-3"
+                numCopies={8}
+                parallaxClassName="py-4 md:py-6"
                 scrollerClassName="flex items-center justify-center text-center"
                 parallaxStyle={{ width: "100%" }}
                 scrollerStyle={{ width: "100%" }}
