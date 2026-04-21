@@ -16,27 +16,29 @@ export default function SoundManager() {
       audioCtxRef.current = new AudioContext();
     }
 
-    const unlockAudio = async () => {
+    const unlockAudio = () => {
       if (!audioRef.current) return;
 
-      try {
-        // Resume SFX engine
-        if (audioCtxRef.current && audioCtxRef.current.state === "suspended") {
-          await audioCtxRef.current.resume();
-        }
-
-        // Start ambient music
-        audioRef.current.volume = 0.4;
-        await audioRef.current.play();
+      // Trigger media playback immediately in the gesture handler.
+      audioRef.current.volume = 0.4;
+      audioRef.current.play().then(() => {
         setIsPlaying(true);
+      }).catch((err) => {
+        console.error("Ambient play failed:", err);
+        setIsPlaying(false);
+      });
 
-        // Remove listeners once unlocked
-        window.removeEventListener("click", unlockAudio);
-        window.removeEventListener("touchstart", unlockAudio);
-        window.removeEventListener("scroll", unlockAudio);
-      } catch (err) {
-        console.error("Audio unlock failed:", err);
+      // Resume SFX engine without blocking the ambient play call.
+      if (audioCtxRef.current && audioCtxRef.current.state === "suspended") {
+        audioCtxRef.current.resume().catch((err) => {
+          console.error("AudioContext resume failed:", err);
+        });
       }
+
+      // Remove listeners once an unlock attempt has been made.
+      window.removeEventListener("click", unlockAudio);
+      window.removeEventListener("touchstart", unlockAudio);
+      window.removeEventListener("scroll", unlockAudio);
     };
 
     window.addEventListener("click", unlockAudio);
