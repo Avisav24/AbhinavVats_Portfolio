@@ -20,6 +20,10 @@
   --color-neon: #6fff00;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: var(--color-bg-main);
   color: var(--color-cream);

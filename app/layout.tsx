@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Anton, Condiment } from "next/font/google";
 import "./globals.css";
-import LenisWrapper from "@/components/LenisWrapper";
 
 import CustomCursor from "@/components/CustomCursor";
 import LoadingScreen from "@/components/LoadingScreen";
@@ -41,7 +40,7 @@ export default function RootLayout({
           className="fixed inset-0 z-50 pointer-events-none mix-blend-lighten opacity-60 bg-cover bg-center"
           style={{ backgroundImage: "url('/texture.png')" }}
         />
-        <LenisWrapper>{children}</LenisWrapper>
+        {children}
       </body>
     </html>
   );
