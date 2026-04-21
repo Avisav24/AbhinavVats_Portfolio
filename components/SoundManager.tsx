@@ -18,28 +18,40 @@ export default function SoundManager() {
     audioRef.current = audio;
 
     const playOnInteract = async () => {
-      if (userDisabled.current) return;
+      if (userDisabled.current || !audioRef.current) return;
       try {
-        await audio.play();
-        window.removeEventListener("mousedown", playOnInteract);
-        window.removeEventListener("keydown", playOnInteract);
-        window.removeEventListener("touchstart", playOnInteract);
-        window.removeEventListener("scroll", playOnInteract);
+        if (audioRef.current.paused) {
+          await audioRef.current.play();
+          console.log("Audio playing via interaction");
+        }
+        cleanup();
       } catch (e) {
         console.error("Interaction play failed:", e);
       }
     };
 
-    // Add listeners to catch interaction even on the loading screen
+    const cleanup = () => {
+      window.removeEventListener("mousedown", playOnInteract);
+      window.removeEventListener("keydown", playOnInteract);
+      window.removeEventListener("touchstart", playOnInteract);
+      window.removeEventListener("scroll", playOnInteract);
+      window.removeEventListener("click", playOnInteract);
+    };
+
+    // Add listeners to catch interaction
     window.addEventListener("mousedown", playOnInteract);
     window.addEventListener("keydown", playOnInteract);
     window.addEventListener("touchstart", playOnInteract);
     window.addEventListener("scroll", playOnInteract);
+    window.addEventListener("click", playOnInteract);
 
-    // Attempt to play immediately (might only work if browser cache/policy allows)
+    // Attempt to play immediately
     audio.play().catch(() => {
       console.log("Autoplay blocked, waiting for interaction...");
     });
+
+    return cleanup;
+
     // Initialize Web Audio API for SFX
     const AudioContext = window.AudioContext || (window as any).webkitAudioContext;
     if (AudioContext) {
