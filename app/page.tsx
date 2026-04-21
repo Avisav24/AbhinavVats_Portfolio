@@ -407,6 +407,35 @@ export default function Home() {
             </h2>
           </motion.div>
 
+          <div className="mb-14 w-full overflow-hidden bg-[#010828]">
+            {/* Line 1: Green, scrolling right */}
+            <div className="overflow-hidden py-3 md:py-4">
+              <div className="flex gap-8 animate-marquee-right">
+                <span className="font-grotesk font-bold text-[#6FFF00] text-[24px] md:text-[40px] whitespace-nowrap">
+                  SKILLS SKILLS SKILLS SKILLS SKILLS SKILLS SKILLS SKILLS SKILLS SKILLS
+                </span>
+              </div>
+            </div>
+
+            {/* Line 2: White, scrolling left */}
+            <div className="overflow-hidden py-3 md:py-4">
+              <div className="flex gap-8 animate-marquee-left">
+                <span className="font-grotesk font-bold text-[#EFF4FF] text-[20px] md:text-[32px] whitespace-nowrap">
+                  Python • FastAPI • PyTorch • TensorFlow • TypeScript • React • Next.js • AWS • Docker • PostgreSQL • MongoDB • Linux • GitHub Actions • CI/CD • Redis
+                </span>
+              </div>
+            </div>
+
+            {/* Line 3: White, scrolling right */}
+            <div className="overflow-hidden py-3 md:py-4">
+              <div className="flex gap-8 animate-marquee-right">
+                <span className="font-grotesk font-bold text-[#EFF4FF] text-[20px] md:text-[32px] whitespace-nowrap">
+                  Python • FastAPI • PyTorch • TensorFlow • TypeScript • React • Next.js • AWS • Docker • PostgreSQL • MongoDB • Linux • GitHub Actions • CI/CD • Redis
+                </span>
+              </div>
+            </div>
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
             {[
               {

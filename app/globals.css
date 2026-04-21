@@ -112,3 +112,31 @@ button,
     text-shadow: none;
   }
 }
+
+@keyframes marquee-right {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100vw);
+  }
+}
+
+@keyframes marquee-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100vw);
+  }
+}
+
+@layer utilities {
+  .animate-marquee-right {
+    animation: marquee-right 30s linear infinite;
+  }
+  
+  .animate-marquee-left {
+    animation: marquee-left 30s linear infinite;
+  }
+}
