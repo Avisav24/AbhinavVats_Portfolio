@@ -10,14 +10,15 @@ export default function SoundManager() {
 
   useEffect(() => {
     // Initialize SFX Engine
-    const AudioContext = window.AudioContext || (window as any).webkitAudioContext;
+    const AudioContext =
+      window.AudioContext || (window as any).webkitAudioContext;
     if (AudioContext) {
       audioCtxRef.current = new AudioContext();
     }
 
     const unlockAudio = async () => {
       if (!audioRef.current) return;
-      
+
       try {
         // Resume SFX engine
         if (audioCtxRef.current && audioCtxRef.current.state === "suspended") {
@@ -28,7 +29,7 @@ export default function SoundManager() {
         audioRef.current.volume = 0.4;
         await audioRef.current.play();
         setIsPlaying(true);
-        
+
         // Remove listeners once unlocked
         window.removeEventListener("click", unlockAudio);
         window.removeEventListener("touchstart", unlockAudio);
@@ -45,7 +46,11 @@ export default function SoundManager() {
     // Global Hover SFX
     const handleMouseOver = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
-      if (target.closest("a") || target.closest("button") || target.closest("[data-hover-sfx]")) {
+      if (
+        target.closest("a") ||
+        target.closest("button") ||
+        target.closest("[data-hover-sfx]")
+      ) {
         playHoverSfx();
       }
     };
@@ -72,7 +77,7 @@ export default function SoundManager() {
     const now = ctx.currentTime;
     osc.frequency.setValueAtTime(300, now);
     osc.frequency.exponentialRampToValueAtTime(600, now + 0.1);
-    
+
     gain.gain.setValueAtTime(0, now);
     gain.gain.linearRampToValueAtTime(0.05, now + 0.02);
     gain.gain.exponentialRampToValueAtTime(0.001, now + 0.1);
@@ -101,7 +106,7 @@ export default function SoundManager() {
         preload="auto"
         playsInline
       />
-      
+
       <button
         onClick={toggle}
         className="fixed bottom-8 right-8 z-[100] w-12 h-12 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center hover:bg-white/20 transition-all active:scale-95"

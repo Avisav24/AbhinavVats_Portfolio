@@ -38,7 +38,10 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-[#010828] text-[#EFF4FF] font-mono uppercase">
       {/* SECTION 1: HERO */}
-      <section id="homepage" className="relative w-full h-[100vh] rounded-b-[32px] overflow-hidden flex flex-col items-center">
+      <section
+        id="homepage"
+        className="relative w-full h-[100vh] rounded-b-[32px] overflow-hidden flex flex-col items-center"
+      >
         <video
           autoPlay
           loop
@@ -49,13 +52,41 @@ export default function Home() {
         />
 
         {/* Vignette overlay on all 4 borders */}
-        <div className="absolute inset-0 z-[1] pointer-events-none" style={{
-          background: 'radial-gradient(ellipse at 50% 50%, transparent 40%, rgba(1,8,40,0.55) 70%, rgba(1,8,40,0.92) 100%)'
-        }} />
-        <div className="absolute top-0 left-0 right-0 h-40 z-[1] pointer-events-none" style={{ background: 'linear-gradient(to bottom, rgba(1,8,40,0.85), transparent)' }} />
-        <div className="absolute bottom-0 left-0 right-0 h-40 z-[1] pointer-events-none" style={{ background: 'linear-gradient(to top, rgba(1,8,40,0.85), transparent)' }} />
-        <div className="absolute top-0 left-0 bottom-0 w-32 z-[1] pointer-events-none" style={{ background: 'linear-gradient(to right, rgba(1,8,40,0.75), transparent)' }} />
-        <div className="absolute top-0 right-0 bottom-0 w-32 z-[1] pointer-events-none" style={{ background: 'linear-gradient(to left, rgba(1,8,40,0.75), transparent)' }} />
+        <div
+          className="absolute inset-0 z-[1] pointer-events-none"
+          style={{
+            background:
+              "radial-gradient(ellipse at 50% 50%, transparent 40%, rgba(1,8,40,0.55) 70%, rgba(1,8,40,0.92) 100%)",
+          }}
+        />
+        <div
+          className="absolute top-0 left-0 right-0 h-40 z-[1] pointer-events-none"
+          style={{
+            background:
+              "linear-gradient(to bottom, rgba(1,8,40,0.85), transparent)",
+          }}
+        />
+        <div
+          className="absolute bottom-0 left-0 right-0 h-40 z-[1] pointer-events-none"
+          style={{
+            background:
+              "linear-gradient(to top, rgba(1,8,40,0.85), transparent)",
+          }}
+        />
+        <div
+          className="absolute top-0 left-0 bottom-0 w-32 z-[1] pointer-events-none"
+          style={{
+            background:
+              "linear-gradient(to right, rgba(1,8,40,0.75), transparent)",
+          }}
+        />
+        <div
+          className="absolute top-0 right-0 bottom-0 w-32 z-[1] pointer-events-none"
+          style={{
+            background:
+              "linear-gradient(to left, rgba(1,8,40,0.75), transparent)",
+          }}
+        />
 
         <div className="relative z-10 w-full max-w-[1831px] px-6 md:px-12 lg:px-24 h-full flex flex-col pt-[32px]">
           {/* Header - Logo | Nav | Social */}
@@ -65,43 +96,78 @@ export default function Home() {
             </div>
             {/* Inline centered navbar */}
             <nav className="hidden lg:flex items-center justify-center gap-8 bg-transparent drop-shadow-[0_4px_16px_rgba(0,0,0,0.8)] px-10 py-3 flex-1 max-w-[700px] mx-auto">
-              {["Homepage", "Work", "Experience", "About", "Skills", "Contact"].map(
-                (item) => (
-                  <a
-                    key={item}
-                    href={`#${item.toLowerCase()}`}
-                    className="font-grotesk text-[18px] md:text-[20px] uppercase hover:text-[#6FFF00] transition-colors whitespace-nowrap"
-                  >
-                    {item}
-                  </a>
-                ),
-              )}
+              {[
+                "Homepage",
+                "Work",
+                "Experience",
+                "About",
+                "Skills",
+                "Contact",
+              ].map((item) => (
+                <a
+                  key={item}
+                  href={`#${item.toLowerCase()}`}
+                  className="font-grotesk text-[18px] md:text-[20px] uppercase hover:text-[#6FFF00] transition-colors whitespace-nowrap"
+                >
+                  {item}
+                </a>
+              ))}
             </nav>
             {/* Social Desktop - inline */}
             <div className="hidden lg:flex flex-row items-center gap-3 shrink-0">
-              <a href="mailto:abhinavvats.dev@gmail.com" className="w-[40px] h-[40px] rounded-[0.75rem] flex items-center justify-center hover:bg-white/10 transition-colors drop-shadow-[0_4px_8px_rgba(0,0,0,0.5)]">
+              <a
+                href="mailto:abhinavvats.dev@gmail.com"
+                className="w-[40px] h-[40px] rounded-[0.75rem] flex items-center justify-center hover:bg-white/10 transition-colors drop-shadow-[0_4px_8px_rgba(0,0,0,0.5)]"
+              >
                 <Mail className="w-[16px] h-[16px]" />
               </a>
-              <a href="https://www.linkedin.com/in/abhinav-vats25/" target="_blank" rel="noreferrer" className="w-[40px] h-[40px] rounded-[0.75rem] flex items-center justify-center hover:bg-white/10 transition-colors drop-shadow-[0_4px_8px_rgba(0,0,0,0.5)]">
-                <svg className="w-[16px] h-[16px]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <a
+                href="https://www.linkedin.com/in/abhinav-vats25/"
+                target="_blank"
+                rel="noreferrer"
+                className="w-[40px] h-[40px] rounded-[0.75rem] flex items-center justify-center hover:bg-white/10 transition-colors drop-shadow-[0_4px_8px_rgba(0,0,0,0.5)]"
+              >
+                <svg
+                  className="w-[16px] h-[16px]"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
                   <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
                   <rect x="2" y="9" width="4" height="12" />
                   <circle cx="4" cy="4" r="2" />
                 </svg>
               </a>
-              <a href="https://github.com/Avisav24" target="_blank" rel="noreferrer" className="w-[40px] h-[40px] rounded-[0.75rem] flex items-center justify-center hover:bg-white/10 transition-colors drop-shadow-[0_4px_8px_rgba(0,0,0,0.5)]">
+              <a
+                href="https://github.com/Avisav24"
+                target="_blank"
+                rel="noreferrer"
+                className="w-[40px] h-[40px] rounded-[0.75rem] flex items-center justify-center hover:bg-white/10 transition-colors drop-shadow-[0_4px_8px_rgba(0,0,0,0.5)]"
+              >
                 <Github className="w-[16px] h-[16px]" />
               </a>
             </div>
           </header>
 
-
-
           <div className="flex-1 flex flex-col justify-center items-center w-full">
             <div className="relative text-center w-full max-w-[1100px]">
               <motion.div
-                 animate={{ y: [0, -8, 0], filter: ["drop-shadow(0 0 0px rgba(111,255,0,0))", "drop-shadow(0 0 15px rgba(111,255,0,0.2))", "drop-shadow(0 0 0px rgba(111,255,0,0))"] }}
-                 transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+                animate={{
+                  y: [0, -8, 0],
+                  filter: [
+                    "drop-shadow(0 0 0px rgba(111,255,0,0))",
+                    "drop-shadow(0 0 15px rgba(111,255,0,0.2))",
+                    "drop-shadow(0 0 0px rgba(111,255,0,0))",
+                  ],
+                }}
+                transition={{
+                  repeat: Infinity,
+                  duration: 4,
+                  ease: "easeInOut",
+                }}
               >
                 <motion.h1
                   initial={{ y: 50, opacity: 0, filter: "blur(10px)" }}
@@ -121,9 +187,15 @@ export default function Home() {
                 className="mt-6 h-[42px] md:h-[56px] overflow-hidden relative w-fit mx-auto px-8 md:px-12 bg-transparent drop-shadow-[0_4px_16px_rgba(0,0,0,0.8)]"
               >
                 <div className="glitch-roller font-condiment text-[24px] md:text-[48px] text-[#6FFF00] lowercase capitalize">
-                  <span className="block h-[42px] md:h-[56px] leading-[42px] md:leading-[56px]">Full Stack Dev</span>
-                  <span className="block h-[42px] md:h-[56px] leading-[42px] md:leading-[56px]">AI/ML Practitioner</span>
-                  <span className="block h-[42px] md:h-[56px] leading-[42px] md:leading-[56px]">Personal Portfolio</span>
+                  <span className="block h-[42px] md:h-[56px] leading-[42px] md:leading-[56px]">
+                    Full Stack Dev
+                  </span>
+                  <span className="block h-[42px] md:h-[56px] leading-[42px] md:leading-[56px]">
+                    AI/ML Practitioner
+                  </span>
+                  <span className="block h-[42px] md:h-[56px] leading-[42px] md:leading-[56px]">
+                    Personal Portfolio
+                  </span>
                 </div>
               </motion.div>
 
@@ -137,7 +209,22 @@ export default function Home() {
                 transition={{ duration: 0.8, delay: 0.7 }}
                 className="mt-8 mx-auto w-full max-w-[320px] bg-white/10 backdrop-blur-[15px] border border-white/20 shadow-lg rounded-[1rem] px-8 py-4 font-grotesk text-[16px] text-white hover:text-[#6FFF00] hover:border-[#6FFF00]/50 transition-all uppercase flex items-center justify-center gap-3"
               >
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 22h14a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v4"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M3 15h6"/><path d="M3 18h6"/><path d="M14 15l-4 4 4 4"/></svg>
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M4 22h14a2 2 0 0 0 2-2V7l-5-5H6a2 2 0 0 0-2 2v4" />
+                  <path d="M14 2v4a2 2 0 0 0 2 2h4" />
+                  <path d="M3 15h6" />
+                  <path d="M3 18h6" />
+                  <path d="M14 15l-4 4 4 4" />
+                </svg>
                 Resume
               </motion.a>
             </div>
@@ -184,7 +271,10 @@ export default function Home() {
       </section>
 
       {/* SECTION 2: ABOUT */}
-      <section id="about" className="relative w-full min-h-[100vh] flex flex-col items-center py-16 md:py-24">
+      <section
+        id="about"
+        className="relative w-full min-h-[100vh] flex flex-col items-center py-16 md:py-24"
+      >
         <video
           autoPlay
           loop
@@ -224,23 +314,38 @@ export default function Home() {
             </motion.p>
           </div>
 
-          <div 
-            className="flex flex-col lg:flex-row justify-between w-full mt-12 md:mt-24 gap-8 p-6 md:p-8 rounded-[32px] bg-[rgba(20,25,40,0.55)] backdrop-blur-[25px] border border-white/15 shadow-lg"
-          >
+          <div className="flex flex-col lg:flex-row justify-between w-full mt-12 md:mt-24 gap-8 p-6 md:p-8 rounded-[32px] bg-[rgba(20,25,40,0.55)] backdrop-blur-[15px] border border-white/15 shadow-lg">
             <div className="flex flex-col space-y-6 flex-1 text-[#EFF4FF]">
               <div>
-                <h3 className="font-grotesk text-[24px] text-[#6FFF00] mb-2">Details</h3>
+                <h3 className="font-grotesk text-[24px] text-[#6FFF00] mb-2">
+                  Details
+                </h3>
                 <ul className="font-mono text-[14px] opacity-80 space-y-2">
-                  <li><strong>Name:</strong> Abhinav Vats</li>
-                  <li><strong>Location:</strong> New Delhi, India</li>
-                  <li><strong>Phone:</strong> +91 9205562868</li>
-                  <li><strong>Email:</strong> <a href="mailto:abhinavvats.dev@gmail.com">abhinavvats.dev@gmail.com</a></li>
+                  <li>
+                    <strong>Name:</strong> Abhinav Vats
+                  </li>
+                  <li>
+                    <strong>Location:</strong> New Delhi, India
+                  </li>
+                  <li>
+                    <strong>Phone:</strong> +91 9205562868
+                  </li>
+                  <li>
+                    <strong>Email:</strong>{" "}
+                    <a href="mailto:abhinavvats.dev@gmail.com">
+                      abhinavvats.dev@gmail.com
+                    </a>
+                  </li>
                 </ul>
               </div>
               <div>
-                <h3 className="font-grotesk text-[24px] text-[#6FFF00] mb-2">Education</h3>
+                <h3 className="font-grotesk text-[24px] text-[#6FFF00] mb-2">
+                  Education
+                </h3>
                 <ul className="font-mono text-[14px] opacity-80 space-y-2">
-                  <li><strong>B.Tech in Computer Science and Engineering</strong></li>
+                  <li>
+                    <strong>B.Tech in Computer Science and Engineering</strong>
+                  </li>
                   <li>SRM Institute of Science and Technology, Delhi-NCR</li>
                   <li>Aug 2023 – May 2027 | CGPA: 9.17/10.0</li>
                 </ul>
@@ -248,11 +353,23 @@ export default function Home() {
             </div>
             <div className="flex flex-col space-y-6 flex-1 text-[#EFF4FF]">
               <div>
-                <h3 className="font-grotesk text-[24px] text-[#6FFF00] mb-2">Research</h3>
+                <h3 className="font-grotesk text-[24px] text-[#6FFF00] mb-2">
+                  Research
+                </h3>
                 <ul className="font-mono text-[14px] opacity-80 space-y-2">
-                  <li><strong>First Author, IEEE Conference Paper (Under Review) 2026</strong></li>
-                  <li>AI-Driven Fashion Recommendation System (CNNs + Transformers)</li>
-                  <li>Full pipeline from training (PyTorch) to REST API deployment (FastAPI) on AWS.</li>
+                  <li>
+                    <strong>
+                      First Author, IEEE Conference Paper (Under Review) 2026
+                    </strong>
+                  </li>
+                  <li>
+                    AI-Driven Fashion Recommendation System (CNNs +
+                    Transformers)
+                  </li>
+                  <li>
+                    Full pipeline from training (PyTorch) to REST API deployment
+                    (FastAPI) on AWS.
+                  </li>
                 </ul>
               </div>
             </div>
@@ -261,7 +378,10 @@ export default function Home() {
       </section>
 
       {/* SECTION: SKILLS */}
-      <section id="skills" className="w-full bg-[#010828] py-24 flex flex-col items-center border-t border-white/5">
+      <section
+        id="skills"
+        className="w-full bg-[#010828] py-24 flex flex-col items-center border-t border-white/5"
+      >
         <div className="w-full max-w-[1831px] px-6 md:px-12 lg:px-24">
           <motion.div
             initial={{ y: 30, opacity: 0 }}
@@ -285,29 +405,60 @@ export default function Home() {
             {[
               {
                 category: "Languages",
-                skills: "Python (Primary), Java, JavaScript, TypeScript, C++, SQL",
-                icons: ["python", "openjdk", "javascript", "typescript", "cplusplus"]
+                skills:
+                  "Python (Primary), Java, JavaScript, TypeScript, C++, SQL",
+                icons: [
+                  "python",
+                  "openjdk",
+                  "javascript",
+                  "typescript",
+                  "cplusplus",
+                ],
               },
               {
                 category: "AI / ML",
-                skills: "PyTorch, TensorFlow, Scikit-learn, CNNs, Transformers, NLP, Pandas, NumPy",
-                icons: ["pytorch", "tensorflow", "scikitlearn", "pandas", "numpy"]
+                skills:
+                  "PyTorch, TensorFlow, Scikit-learn, CNNs, Transformers, NLP, Pandas, NumPy",
+                icons: [
+                  "pytorch",
+                  "tensorflow",
+                  "scikitlearn",
+                  "pandas",
+                  "numpy",
+                ],
               },
               {
                 category: "Cloud & DevOps",
-                skills: "AWS (EC2, S3, Lambda), Azure, Docker, GitHub Actions CI/CD, Git, Linux, Shell",
-                icons: ["amazonaws", "azure", "docker", "githubactions", "git", "linux"]
+                skills:
+                  "AWS (EC2, S3, Lambda), Azure, Docker, GitHub Actions CI/CD, Git, Linux, Shell",
+                icons: [
+                  "amazonaws",
+                  "azure",
+                  "docker",
+                  "githubactions",
+                  "git",
+                  "linux",
+                ],
               },
               {
                 category: "Backend & APIs",
-                skills: "FastAPI, Flask, Node.js, REST APIs, JWT, PostgreSQL, MongoDB, Redis",
-                icons: ["fastapi", "flask", "nodedotjs", "postgresql", "mongodb", "redis"]
+                skills:
+                  "FastAPI, Flask, Node.js, REST APIs, JWT, PostgreSQL, MongoDB, Redis",
+                icons: [
+                  "fastapi",
+                  "flask",
+                  "nodedotjs",
+                  "postgresql",
+                  "mongodb",
+                  "redis",
+                ],
               },
               {
                 category: "Testing & QA",
-                skills: "Pytest, Unit Testing, API Testing, Automated Test Pipelines",
-                icons: ["pytest", "postman"]
-              }
+                skills:
+                  "Pytest, Unit Testing, API Testing, Automated Test Pipelines",
+                icons: ["pytest", "postman"],
+              },
             ].map((skillGrp, i) => (
               <motion.div
                 key={i}
@@ -319,12 +470,14 @@ export default function Home() {
                 data-hover-sfx="true"
               >
                 <div>
-                  <h3 className="font-grotesk text-[24px] text-[#6FFF00] mb-4 uppercase">{skillGrp.category}</h3>
+                  <h3 className="font-grotesk text-[24px] text-[#6FFF00] mb-4 uppercase">
+                    {skillGrp.category}
+                  </h3>
                   <p className="font-mono text-[14px] text-[#EFF4FF]/80 normal-case leading-relaxed">
                     {skillGrp.skills}
                   </p>
                 </div>
-                
+
                 {/* 3D Logos */}
                 <div className="flex flex-wrap gap-4 mt-8">
                   {skillGrp.icons.map((icon, idx) => (
@@ -332,7 +485,7 @@ export default function Home() {
                       {/* 3D Base/Shadow */}
                       <div className="absolute inset-0 bg-[#6FFF00]/20 rounded-xl blur-[6px] transform group-hover/icon:scale-110 transition-transform"></div>
                       <div className="absolute inset-0 bg-gradient-to-br from-white/30 to-transparent rounded-xl opacity-0 group-hover/icon:opacity-100 transition-opacity"></div>
-                      
+
                       {/* Icon Container */}
                       <div className="relative flex items-center justify-center w-12 h-12 bg-[#010828]/80 backdrop-blur-md border border-white/10 rounded-xl shadow-[inset_0_1px_1px_rgba(255,255,255,0.2),_inset_0_-2px_4px_rgba(0,0,0,0.5),_0_4px_8px_rgba(0,0,0,0.5)] transform transition-transform group-hover/icon:-translate-y-2 group-hover/icon:shadow-[inset_0_1px_1px_rgba(111,255,0,0.4),_inset_0_-2px_4px_rgba(111,255,0,0.2),_0_8px_16px_rgba(111,255,0,0.3)] group-hover/icon:border-[#6FFF00]/50">
                         {icon === "amazonaws" || icon === "azure" ? (
@@ -341,10 +494,10 @@ export default function Home() {
                           </span>
                         ) : (
                           /* eslint-disable-next-line @next/next/no-img-element */
-                          <img 
-                            src={`https://cdn.simpleicons.org/${icon}/6FFF00`} 
-                            alt={icon} 
-                            className="w-6 h-6 drop-shadow-[0_0_8px_rgba(111,255,0,0.8)] transition-transform group-hover/icon:scale-110" 
+                          <img
+                            src={`https://cdn.simpleicons.org/${icon}/6FFF00`}
+                            alt={icon}
+                            className="w-6 h-6 drop-shadow-[0_0_8px_rgba(111,255,0,0.8)] transition-transform group-hover/icon:scale-110"
                           />
                         )}
                       </div>
@@ -357,7 +510,10 @@ export default function Home() {
         </div>
       </section>
       {/* SECTION: EXPERIENCE */}
-      <section id="experience" className="w-full bg-[#010828] py-24 flex flex-col items-center border-t border-white/5">
+      <section
+        id="experience"
+        className="w-full bg-[#010828] py-24 flex flex-col items-center border-t border-white/5"
+      >
         <div className="w-full max-w-[1831px] px-6 md:px-12 lg:px-24">
           <motion.div
             initial={{ y: 30, opacity: 0 }}
@@ -395,8 +551,18 @@ export default function Home() {
                   <span className="w-2 h-2 text-center rounded-full bg-[#6FFF00] mb-6 ml-1"></span>
                 </h3>
                 <ul className="font-mono text-[14px] text-[#EFF4FF]/80 max-w-[600px] normal-case relative list-disc pl-5 space-y-2">
-                  <li>Built 50+ reusable components for an AI-driven platform, cutting feature delivery time by 40%; integrated real-time AI recommendation workflows and backend services into production.</li>
-                  <li>Optimized rendering via code splitting and lazy loading, achieving 95+ Lighthouse scores; participated in Agile sprints, code reviews, and cross-functional release deployments.</li>
+                  <li>
+                    Built 50+ reusable components for an AI-driven platform,
+                    cutting feature delivery time by 40%; integrated real-time
+                    AI recommendation workflows and backend services into
+                    production.
+                  </li>
+                  <li>
+                    Optimized rendering via code splitting and lazy loading,
+                    achieving 95+ Lighthouse scores; participated in Agile
+                    sprints, code reviews, and cross-functional release
+                    deployments.
+                  </li>
                 </ul>
               </div>
               <div className="mt-6 md:mt-0 liquid-glass rounded-[20px] px-6 py-3 border border-[#6FFF00]/20 flex items-center justify-center">
@@ -423,9 +589,22 @@ export default function Home() {
                   <span className="w-2 h-2 text-center rounded-full bg-[#6FFF00] mb-6 ml-1"></span>
                 </h3>
                 <ul className="font-mono text-[14px] text-[#EFF4FF]/80 max-w-[600px] normal-case relative list-disc pl-5 space-y-2">
-                  <li>Designed and deployed sentiment analysis service using Azure Cognitive Services and Flask, achieving 87% F1-score on real-world text data.</li>
-                  <li>Automated end-to-end ML workflows using Azure Functions and CI/CD pipelines, reducing manual intervention in model update and release cycles.</li>
-                  <li>Built production-ready APIs with structured logging, error handling, and monitoring integration; managed cloud infrastructure, deployment pipelines, and service reliability on Azure.</li>
+                  <li>
+                    Designed and deployed sentiment analysis service using Azure
+                    Cognitive Services and Flask, achieving 87% F1-score on
+                    real-world text data.
+                  </li>
+                  <li>
+                    Automated end-to-end ML workflows using Azure Functions and
+                    CI/CD pipelines, reducing manual intervention in model
+                    update and release cycles.
+                  </li>
+                  <li>
+                    Built production-ready APIs with structured logging, error
+                    handling, and monitoring integration; managed cloud
+                    infrastructure, deployment pipelines, and service
+                    reliability on Azure.
+                  </li>
                 </ul>
               </div>
               <div className="mt-6 md:mt-0 liquid-glass rounded-[20px] px-6 py-3 border border-[#6FFF00]/20 flex items-center justify-center">
@@ -439,7 +618,10 @@ export default function Home() {
       </section>
 
       {/* SECTION 3: PROJECTS GRID */}
-      <section id="work" className="w-full bg-[#010828] py-24 flex flex-col items-center">
+      <section
+        id="work"
+        className="w-full bg-[#010828] py-24 flex flex-col items-center"
+      >
         <div className="w-full max-w-[1831px] px-6 md:px-12 lg:px-24">
           <div className="flex flex-col md:flex-row justify-between md:items-end mb-16 gap-8">
             <div>
@@ -633,7 +815,10 @@ export default function Home() {
       </section>
 
       {/* SECTION 4: CTA */}
-      <section id="contact" className="relative w-full min-h-[60vh] flex flex-col items-center justify-center overflow-hidden">
+      <section
+        id="contact"
+        className="relative w-full min-h-[60vh] flex flex-col items-center justify-center overflow-hidden"
+      >
         <video
           autoPlay
           loop
@@ -671,9 +856,12 @@ export default function Home() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="absolute left-1/2 -translate-x-1/2 bottom-[12%] md:bottom-[15%] flex flex-col md:flex-row items-center gap-8 z-20"
         >
-          <div 
+          <div
             className="liquid-glass rounded-[0.5rem] md:rounded-[1.25rem] flex flex-row"
-            style={{ backdropFilter: 'blur(50px)', WebkitBackdropFilter: 'blur(50px)' }}
+            style={{
+              backdropFilter: "blur(50px)",
+              WebkitBackdropFilter: "blur(50px)",
+            }}
           >
             <a
               href="mailto:abhinavvats.dev@gmail.com"
@@ -716,35 +904,40 @@ export default function Home() {
             onSubmit={async (e) => {
               e.preventDefault();
               const form = e.target as HTMLFormElement;
-              const btn = form.querySelector('button');
-              const input = form.elements.namedItem('message') as HTMLInputElement;
-              
+              const btn = form.querySelector("button");
+              const input = form.elements.namedItem(
+                "message",
+              ) as HTMLInputElement;
+
               if (btn) {
-                btn.innerHTML = 'Sending...';
+                btn.innerHTML = "Sending...";
                 btn.disabled = true;
               }
 
               try {
                 // Using Web3Forms for backend-less email delivery
                 // You can get your own access key at https://web3forms.com/
-                const response = await fetch("https://api.web3forms.com/submit", {
-                  method: "POST",
-                  headers: {
-                    "Content-Type": "application/json",
-                    Accept: "application/json",
+                const response = await fetch(
+                  "https://api.web3forms.com/submit",
+                  {
+                    method: "POST",
+                    headers: {
+                      "Content-Type": "application/json",
+                      Accept: "application/json",
+                    },
+                    body: JSON.stringify({
+                      access_key: "fc8d3547-ec69-493d-ad31-7ff460162145", // Added your live access key
+                      message: input.value,
+                      subject: "New Portfolio Message",
+                      from_name: "Portfolio Visitor",
+                    }),
                   },
-                  body: JSON.stringify({
-                    access_key: "fc8d3547-ec69-493d-ad31-7ff460162145", // Added your live access key
-                    message: input.value,
-                    subject: "New Portfolio Message",
-                    from_name: "Portfolio Visitor",
-                  }),
-                });
+                );
 
                 if (response.ok) {
                   if (btn) {
-                    btn.innerHTML = 'Sent!';
-                    btn.classList.add('bg-[#6FFF00]/30');
+                    btn.innerHTML = "Sent!";
+                    btn.classList.add("bg-[#6FFF00]/30");
                   }
                   form.reset();
                 } else {
@@ -752,8 +945,11 @@ export default function Home() {
                 }
               } catch (err) {
                 if (btn) {
-                  btn.innerHTML = 'Error!';
-                  setTimeout(() => { btn.innerHTML = 'Send'; btn.disabled = false; }, 2000);
+                  btn.innerHTML = "Error!";
+                  setTimeout(() => {
+                    btn.innerHTML = "Send";
+                    btn.disabled = false;
+                  }, 2000);
                 }
               }
             }}
@@ -764,10 +960,12 @@ export default function Home() {
               type="text"
               placeholder="Write a message..."
               onInput={(e) => {
-                const btn = (e.currentTarget.form as HTMLFormElement).querySelector('button');
-                if (btn && btn.innerHTML === 'Sent!') {
-                  btn.innerHTML = 'Send';
-                  btn.classList.remove('bg-[#6FFF00]/30');
+                const btn = (
+                  e.currentTarget.form as HTMLFormElement
+                ).querySelector("button");
+                if (btn && btn.innerHTML === "Sent!") {
+                  btn.innerHTML = "Send";
+                  btn.classList.remove("bg-[#6FFF00]/30");
                   btn.disabled = false;
                 }
               }}
