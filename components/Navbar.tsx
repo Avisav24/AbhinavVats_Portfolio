@@ -26,7 +26,10 @@ export default function Navbar() {
       className="fixed top-0 left-0 w-full h-[72px] z-[100] bg-[#010828]/95 backdrop-blur-[20px] transition-colors duration-300 border-b border-white/10"
     >
       <div className="max-w-[1280px] mx-auto px-6 h-full flex justify-between items-center transition-all duration-300 group-autoscroll:.has-border">
-        <a href="https://abhinavvats.in" className="font-display font-bold text-[24px] hover:opacity-80 transition-opacity">
+        <a
+          href="https://abhinavvats.in"
+          className="font-display font-bold text-[24px] hover:opacity-80 transition-opacity"
+        >
           AV<span className="text-gold">·</span>
         </a>
         <div className="flex space-x-8 text-[11px] font-body tracking-[0.12em] uppercase">
