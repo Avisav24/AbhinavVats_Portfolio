@@ -303,8 +303,8 @@ export default function Home() {
               </span>
             </motion.div>
             <motion.p
-              initial={{ opacity: 0, filter: "blur(5px)" }}
-              whileInView={{ opacity: 1, filter: "blur(0px)" }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.4 }}
               className="font-mono text-[14px] md:text-[16px] max-w-[266px] leading-[1.5]"
