@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { Volume2, VolumeX } from "lucide-react";
 
 export default function SoundManager() {
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(true);
   const audioRef = useRef<HTMLAudioElement>(null);
   const audioCtxRef = useRef<AudioContext | null>(null);
 
@@ -97,6 +97,7 @@ export default function SoundManager() {
         ref={audioRef}
         src="/sounds/ambient.mp3"
         loop
+        autoPlay
         preload="auto"
         playsInline
       />
