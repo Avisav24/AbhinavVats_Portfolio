@@ -9,16 +9,16 @@ gsap.registerPlugin(ScrollTrigger);
 
 export function useLenis() {
   useEffect(() => {
-    // Easing function: easeInOutQuart
-    const easeInOutQuart = (x: number): number => {
-      return x < 0.5 ? 8 * x * x * x * x : 1 - Math.pow(-2 * x + 2, 4) / 2;
+    // Fast but smooth easing function.
+    const easeOutCubic = (x: number): number => {
+      return 1 - Math.pow(1 - x, 3);
     };
 
     const lenis = new Lenis({
-      duration: 1.5,
-      easing: easeInOutQuart,
+      duration: 0.75,
+      easing: easeOutCubic,
       smoothWheel: true,
-      wheelMultiplier: 1.2,
+      wheelMultiplier: 1,
     });
 
     const raf = (time: number) => {
