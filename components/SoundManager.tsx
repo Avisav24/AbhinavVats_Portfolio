@@ -14,8 +14,13 @@ export default function SoundManager() {
     const audio = new Audio("/sounds/ambient.mp3");
     audio.loop = true;
     audio.volume = 0.4;
-    audio.preload = "auto";
+    audio.preload = "metadata"; // Changed from 'auto' to 'metadata' for faster start
     audioRef.current = audio;
+
+    // Listen for errors
+    audio.onerror = (e) => {
+      console.error("Audio failed to load:", e);
+    };
 
     const playOnInteract = async () => {
       if (userDisabled.current || !audioRef.current) return;
