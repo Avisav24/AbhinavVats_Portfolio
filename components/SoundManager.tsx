@@ -4,144 +4,114 @@ import { useEffect, useRef, useState } from "react";
 import { Volume2, VolumeX } from "lucide-react";
 
 export default function SoundManager() {
-  const [isPlaying, setIsPlaying] = useState(true);
-  const userDisabled = useRef(false);
-  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const audioRef = useRef<HTMLAudioElement>(null);
   const audioCtxRef = useRef<AudioContext | null>(null);
 
   useEffect(() => {
-    // Create ambient audio
-    const audio = new Audio("/sounds/ambient.mp3");
-    audio.loop = true;
-    audio.volume = 0.4;
-    audio.preload = "metadata"; // Changed from 'auto' to 'metadata' for faster start
-    audioRef.current = audio;
-
-    // Listen for errors
-    audio.onerror = (e) => {
-      console.error("Audio failed to load:", e);
-    };
-
-    const playOnInteract = async () => {
-      if (userDisabled.current || !audioRef.current) return;
-      try {
-        // Resume AudioContext for SFX
-        if (audioCtxRef.current && audioCtxRef.current.state === "suspended") {
-          await audioCtxRef.current.resume();
-        }
-
-        if (audioRef.current.paused) {
-          audioRef.current.volume = 0.4;
-          await audioRef.current.play();
-          console.log("Audio engines ready");
-        }
-        cleanup();
-      } catch (e) {
-        console.error("Interaction play failed:", e);
-      }
-    };
-
-    const cleanup = () => {
-      window.removeEventListener("mousedown", playOnInteract);
-      window.removeEventListener("keydown", playOnInteract);
-      window.removeEventListener("touchstart", playOnInteract);
-      window.removeEventListener("scroll", playOnInteract);
-      window.removeEventListener("click", playOnInteract);
-    };
-
-    // Add listeners to catch interaction
-    window.addEventListener("mousedown", playOnInteract);
-    window.addEventListener("keydown", playOnInteract);
-    window.addEventListener("touchstart", playOnInteract);
-    window.addEventListener("scroll", playOnInteract);
-    window.addEventListener("click", playOnInteract);
-
-    // Attempt to play immediately
-    audio.play().catch(() => {
-      console.log("Autoplay blocked, waiting for interaction...");
-    });
-
-    return cleanup;
-
-    // Initialize Web Audio API for SFX
+    // Initialize SFX Engine
     const AudioContext = window.AudioContext || (window as any).webkitAudioContext;
     if (AudioContext) {
       audioCtxRef.current = new AudioContext();
     }
 
-    // Global Hover Event Listener for SFX
-    const handleMouseOver = (e: MouseEvent) => {
-      const target = e.target as HTMLElement;
-      if (
-        target.tagName === "A" ||
-        target.tagName === "BUTTON" ||
-        target.closest("a") ||
-        target.closest("button") ||
-        target.closest("[data-hover-sfx]")
-      ) {
-        playHoverSfx();
+    const unlockAudio = async () => {
+      if (!audioRef.current) return;
+      
+      try {
+        // Resume SFX engine
+        if (audioCtxRef.current && audioCtxRef.current.state === "suspended") {
+          await audioCtxRef.current.resume();
+        }
+
+        // Start ambient music
+        audioRef.current.volume = 0.4;
+        await audioRef.current.play();
+        setIsPlaying(true);
+        
+        // Remove listeners once unlocked
+        window.removeEventListener("click", unlockAudio);
+        window.removeEventListener("touchstart", unlockAudio);
+        window.removeEventListener("scroll", unlockAudio);
+      } catch (err) {
+        console.error("Audio unlock failed:", err);
       }
     };
 
+    window.addEventListener("click", unlockAudio);
+    window.addEventListener("touchstart", unlockAudio);
+    window.addEventListener("scroll", unlockAudio);
+
+    // Global Hover SFX
+    const handleMouseOver = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (target.closest("a") || target.closest("button") || target.closest("[data-hover-sfx]")) {
+        playHoverSfx();
+      }
+    };
     window.addEventListener("mouseover", handleMouseOver);
+
     return () => {
+      window.removeEventListener("click", unlockAudio);
+      window.removeEventListener("touchstart", unlockAudio);
+      window.removeEventListener("scroll", unlockAudio);
       window.removeEventListener("mouseover", handleMouseOver);
-      audio.pause();
-      audio.src = "";
     };
   }, []);
 
-  const toggleAmbient = () => {
-    if (!audioRef.current) return;
-    if (isPlaying) {
-      audioRef.current.pause();
-      userDisabled.current = true;
-    } else {
-      userDisabled.current = false;
-      audioRef.current.play().catch(console.error);
-    }
-    setIsPlaying(!isPlaying);
-  };
-
-  // Synthesize a quick Sci-Fi Hover Sound
   const playHoverSfx = () => {
     const ctx = audioCtxRef.current;
-    if (!ctx) return;
-    
-    // Resume context if suspended (browser policy)
-    if (ctx.state === "suspended") {
-      ctx.resume();
-    }
+    if (!ctx || ctx.state === "suspended") return;
 
     const osc = ctx.createOscillator();
-    const gainNode = ctx.createGain();
+    const gain = ctx.createGain();
+    osc.connect(gain);
+    gain.connect(ctx.destination);
 
-    osc.connect(gainNode);
-    gainNode.connect(ctx.destination);
-
-    // Space-y sweep up sound
     osc.type = "sine";
     const now = ctx.currentTime;
-    
     osc.frequency.setValueAtTime(300, now);
     osc.frequency.exponentialRampToValueAtTime(600, now + 0.1);
     
-    gainNode.gain.setValueAtTime(0, now);
-    gainNode.gain.linearRampToValueAtTime(0.05, now + 0.02); // Keep volume low
-    gainNode.gain.exponentialRampToValueAtTime(0.001, now + 0.1);
+    gain.gain.setValueAtTime(0, now);
+    gain.gain.linearRampToValueAtTime(0.05, now + 0.02);
+    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.1);
 
     osc.start(now);
     osc.stop(now + 0.1);
   };
 
+  const toggle = () => {
+    if (!audioRef.current) return;
+    if (isPlaying) {
+      audioRef.current.pause();
+    } else {
+      audioRef.current.play().catch(console.error);
+    }
+    setIsPlaying(!isPlaying);
+  };
+
   return (
-    <button
-      onClick={toggleAmbient}
-      className="fixed bottom-6 right-6 z-[9990] w-12 h-12 bg-[#010828]/80 backdrop-blur-md border border-[#6FFF00]/30 rounded-full flex items-center justify-center text-[#6FFF00] shadow-[0_0_15px_rgba(111,255,0,0.2)] hover:scale-110 transition-transform cursor-pointer"
-      title="Toggle Ambient Music"
-      style={{ cursor: "none" }} // use custom cursor
-    >
-      {isPlaying ? <Volume2 size={20} /> : <VolumeX size={20} />}
-    </button>
+    <>
+      <audio
+        ref={audioRef}
+        src="/sounds/ambient.mp3"
+        loop
+        preload="auto"
+        playsInline
+      />
+      
+      <button
+        onClick={toggle}
+        className="fixed bottom-8 right-8 z-[100] w-12 h-12 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center hover:bg-white/20 transition-all active:scale-95"
+        aria-label="Toggle Sound"
+      >
+        {isPlaying ? (
+          <Volume2 className="w-5 h-5 text-[#6FFF00]" />
+        ) : (
+          <VolumeX className="w-5 h-5 text-white/50" />
+        )}
+      </button>
+    </>
   );
 }
