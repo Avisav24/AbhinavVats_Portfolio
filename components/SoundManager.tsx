@@ -25,9 +25,15 @@ export default function SoundManager() {
     const playOnInteract = async () => {
       if (userDisabled.current || !audioRef.current) return;
       try {
+        // Resume AudioContext for SFX
+        if (audioCtxRef.current && audioCtxRef.current.state === "suspended") {
+          await audioCtxRef.current.resume();
+        }
+
         if (audioRef.current.paused) {
+          audioRef.current.volume = 0.4;
           await audioRef.current.play();
-          console.log("Audio playing via interaction");
+          console.log("Audio engines ready");
         }
         cleanup();
       } catch (e) {
