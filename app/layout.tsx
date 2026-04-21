@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Anton, Condiment } from "next/font/google";
+import { Anton, Condiment, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import LenisWrapper from "@/components/LenisWrapper";
 
@@ -20,6 +20,12 @@ const condiment = Condiment({
   variable: "--font-condiment",
 });
 
+const playfair = Playfair_Display({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-playfair",
+});
+
 export const metadata: Metadata = {
   title: "Abhinav · Portfolio",
   description: "Beyond earth and familiar boundaries",
@@ -33,7 +39,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${anton.variable} ${condiment.variable} antialiased bg-bg-main text-cream flex min-h-screen flex-col`}
+        className={`${anton.variable} ${condiment.variable} ${playfair.variable} antialiased bg-bg-main text-cream flex min-h-screen flex-col`}
       >
         <LoadingProvider>
           <LoadingScreen />
