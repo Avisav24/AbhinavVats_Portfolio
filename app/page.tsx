@@ -428,26 +428,41 @@ export default function Home() {
           </motion.div>
 
           <div className="mb-14 w-full">
-            <ScrollVelocity
-              texts={[
-                <span
-                  key="skills"
-                  className="font-condiment text-[#6FFF00] text-[48px] md:text-[80px] font-bold"
-                >
-                  SKILLS
-                </span>,
-                "Python  •  FastAPI  •  PyTorch  •  TensorFlow  •  TypeScript  •  React  •  Next.js  •  AWS  •  Docker  •  PostgreSQL  •  MongoDB",
-              ]}
-              velocity={50}
-              className="font-grotesk text-[#EFF4FF] text-[28px] md:text-[56px] drop-shadow-[0_0_12px_rgba(111,255,0,0.18)]"
-              damping={50}
-              stiffness={380}
-              numCopies={6}
-              parallaxClassName="py-6 md:py-8"
-              scrollerClassName="flex items-center justify-center text-center"
-              parallaxStyle={{ width: "100%" }}
-              scrollerStyle={{ width: "100%" }}
-            />
+            <div className="flex flex-col gap-0">
+              <ScrollVelocity
+                texts={[
+                  <span
+                    key="skills"
+                    className="font-grotesk font-bold text-[#6FFF00] text-[48px] md:text-[80px]"
+                  >
+                    SKILLS
+                  </span>,
+                ]}
+                velocity={50}
+                className="font-grotesk font-bold text-[#EFF4FF] text-[28px] md:text-[56px] drop-shadow-[0_0_12px_rgba(111,255,0,0.18)]"
+                damping={50}
+                stiffness={380}
+                numCopies={3}
+                parallaxClassName="py-2 md:py-3"
+                scrollerClassName="flex items-center justify-center text-center"
+                parallaxStyle={{ width: "100%" }}
+                scrollerStyle={{ width: "100%" }}
+              />
+              <ScrollVelocity
+                texts={[
+                  "Python  •  FastAPI  •  PyTorch  •  TensorFlow  •  TypeScript  •  React  •  Next.js  •  AWS  •  Docker  •  PostgreSQL  •  MongoDB",
+                ]}
+                velocity={50}
+                className="font-grotesk font-bold text-[#EFF4FF] text-[24px] md:text-[48px] drop-shadow-[0_0_12px_rgba(111,255,0,0.18)]"
+                damping={50}
+                stiffness={380}
+                numCopies={3}
+                parallaxClassName="py-2 md:py-3"
+                scrollerClassName="flex items-center justify-center text-center"
+                parallaxStyle={{ width: "100%" }}
+                scrollerStyle={{ width: "100%" }}
+              />
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
