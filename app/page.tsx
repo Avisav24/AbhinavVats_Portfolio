@@ -417,10 +417,10 @@ export default function Home() {
           {/* Line 1: Green, scrolling left - Speed 100s */}
           <div className="py-2 md:py-3 w-full border-y border-white/5 border-dashed">
             <div className="flex w-fit animate-marquee-left-100">
-              <span className="font-gotham font-bold text-[#6FFF00] text-[32px] md:text-[50px] whitespace-nowrap">
+              <span className="font-grotesk font-bold text-[#6FFF00] text-[32px] md:text-[50px] whitespace-nowrap">
                 SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • 
               </span>
-              <span className="font-gotham font-bold text-[#6FFF00] text-[32px] md:text-[50px] whitespace-nowrap">
+              <span className="font-grotesk font-bold text-[#6FFF00] text-[32px] md:text-[50px] whitespace-nowrap">
                 SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • 
               </span>
             </div>
@@ -429,10 +429,10 @@ export default function Home() {
           {/* Line 2: White, scrolling right - Speed 120s */}
           <div className="py-2 md:py-3 w-full border-b border-white/5 border-dashed">
             <div className="flex w-fit animate-marquee-right-120">
-              <span className="font-gotham font-bold text-[#EFF4FF] text-[28px] md:text-[40px] whitespace-nowrap uppercase">
+              <span className="font-grotesk font-bold text-[#EFF4FF] text-[28px] md:text-[40px] whitespace-nowrap uppercase">
                 Python • FastAPI • PyTorch • TensorFlow • TypeScript • React • Next.js • AWS • Docker • PostgreSQL • MongoDB • Linux • GitHub Actions • CI/CD • Redis • Python • FastAPI • PyTorch • TensorFlow • TypeScript • React • Next.js • AWS • Docker • PostgreSQL • MongoDB • Linux • GitHub Actions • CI/CD • Redis • 
               </span>
-              <span className="font-gotham font-bold text-[#EFF4FF] text-[28px] md:text-[40px] whitespace-nowrap uppercase">
+              <span className="font-grotesk font-bold text-[#EFF4FF] text-[28px] md:text-[40px] whitespace-nowrap uppercase">
                 Python • FastAPI • PyTorch • TensorFlow • TypeScript • React • Next.js • AWS • Docker • PostgreSQL • MongoDB • Linux • GitHub Actions • CI/CD • Redis • Python • FastAPI • PyTorch • TensorFlow • TypeScript • React • Next.js • AWS • Docker • PostgreSQL • MongoDB • Linux • GitHub Actions • CI/CD • Redis • 
               </span>
             </div>
@@ -441,10 +441,10 @@ export default function Home() {
           {/* Line 3: White, scrolling left - Speed 140s */}
           <div className="py-2 md:py-3 w-full border-b border-white/5 border-dashed">
             <div className="flex w-fit animate-marquee-left-140">
-              <span className="font-gotham font-bold text-[#EFF4FF] text-[28px] md:text-[40px] whitespace-nowrap uppercase">
+              <span className="font-grotesk font-bold text-[#EFF4FF] text-[28px] md:text-[40px] whitespace-nowrap uppercase">
                 Python • FastAPI • PyTorch • TensorFlow • TypeScript • React • Next.js • AWS • Docker • PostgreSQL • MongoDB • Linux • GitHub Actions • CI/CD • Redis • Python • FastAPI • PyTorch • TensorFlow • TypeScript • React • Next.js • AWS • Docker • PostgreSQL • MongoDB • Linux • GitHub Actions • CI/CD • Redis • 
               </span>
-              <span className="font-gotham font-bold text-[#EFF4FF] text-[28px] md:text-[40px] whitespace-nowrap uppercase">
+              <span className="font-grotesk font-bold text-[#EFF4FF] text-[28px] md:text-[40px] whitespace-nowrap uppercase">
                 Python • FastAPI • PyTorch • TensorFlow • TypeScript • React • Next.js • AWS • Docker • PostgreSQL • MongoDB • Linux • GitHub Actions • CI/CD • Redis • Python • FastAPI • PyTorch • TensorFlow • TypeScript • React • Next.js • AWS • Docker • PostgreSQL • MongoDB • Linux • GitHub Actions • CI/CD • Redis • 
               </span>
             </div>
