@@ -143,4 +143,16 @@ button,
   .animate-marquee-left-30 {
     animation: marquee-left 30s linear infinite;
   }
+
+  .animate-marquee-left-40 {
+    animation: marquee-left 40s linear infinite;
+  }
+  
+  .animate-marquee-right-50 {
+    animation: marquee-right 50s linear infinite;
+  }
+  
+  .animate-marquee-left-60 {
+    animation: marquee-left 60s linear infinite;
+  }
 }
