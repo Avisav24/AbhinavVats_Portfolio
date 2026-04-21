@@ -5,9 +5,14 @@ import { Volume2, VolumeX } from "lucide-react";
 
 export default function SoundManager() {
   const [isPlaying, setIsPlaying] = useState(true);
+  const isPlayingRef = useRef(true);
   const audioRef = useRef<HTMLAudioElement>(null);
   const audioCtxRef = useRef<AudioContext | null>(null);
   const isInitialized = useRef(false);
+
+  useEffect(() => {
+    isPlayingRef.current = isPlaying;
+  }, [isPlaying]);
 
   useEffect(() => {
     // Initialize AudioContext
@@ -27,8 +32,8 @@ export default function SoundManager() {
         await audioCtxRef.current.resume().catch(console.error);
       }
 
-      if (audioRef.current && isPlaying) {
-        audioRef.current.volume = 0.3;
+      if (audioRef.current && isPlayingRef.current) {
+        audioRef.current.volume = 0.5;
         try {
           await audioRef.current.play();
           removeUnlockListeners();
@@ -50,7 +55,7 @@ export default function SoundManager() {
     // Try to play immediately
     initAudioContext();
     if (audioRef.current) {
-      audioRef.current.volume = 0.3;
+      audioRef.current.volume = 0.5;
       const playPromise = audioRef.current.play();
       if (playPromise !== undefined) {
         playPromise
@@ -133,6 +138,7 @@ export default function SoundManager() {
       audioRef.current.pause();
       setIsPlaying(false);
     } else {
+      audioRef.current.volume = 0.5;
       audioRef.current.play().catch(console.error);
       if (audioCtxRef.current?.state === "suspended") {
         audioCtxRef.current.resume();
