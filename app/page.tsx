@@ -183,7 +183,13 @@ export default function Home() {
                       rootMargin="-150px"
                       stepDuration={0.32}
                     />
-                    <span style={{ fontStyle: 'italic', fontFamily: 'Times New Roman' }} className="inline-block">
+                    <span
+                      style={{
+                        fontStyle: "italic",
+                        fontFamily: "Playfair Display",
+                      }}
+                      className="inline-block"
+                    >
                       <BlurText
                         text="Earth"
                         className="justify-center"
@@ -207,7 +213,13 @@ export default function Home() {
                       rootMargin="-150px"
                       stepDuration={0.32}
                     />
-                    <span style={{ fontStyle: 'italic', fontFamily: 'Times New Roman' }} className="inline-block">
+                    <span
+                      style={{
+                        fontStyle: "italic",
+                        fontFamily: "Playfair Display",
+                      }}
+                      className="inline-block"
+                    >
                       <BlurText
                         text="limits"
                         className="justify-center"
@@ -454,10 +466,16 @@ export default function Home() {
           <div className="py-2 md:py-3 w-full border-y border-white/5 border-dashed">
             <div className="flex w-fit animate-marquee-left-100">
               <span className="font-grotesk font-bold text-[#6FFF00] text-[32px] md:text-[50px] whitespace-nowrap">
-                SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • 
+                SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS •
+                SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS •
+                SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS •
+                SKILLS • SKILLS • SKILLS •
               </span>
               <span className="font-grotesk font-bold text-[#6FFF00] text-[32px] md:text-[50px] whitespace-nowrap">
-                SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • 
+                SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS •
+                SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS •
+                SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS • SKILLS •
+                SKILLS • SKILLS • SKILLS •
               </span>
             </div>
           </div>
@@ -466,10 +484,18 @@ export default function Home() {
           <div className="py-2 md:py-3 w-full border-b border-white/5 border-dashed">
             <div className="flex w-fit animate-marquee-right-120">
               <span className="font-grotesk font-bold text-[#EFF4FF] text-[28px] md:text-[40px] whitespace-nowrap uppercase">
-                Python • FastAPI • PyTorch • TensorFlow • TypeScript • React • Next.js • AWS • Docker • PostgreSQL • MongoDB • Linux • GitHub Actions • CI/CD • Redis • Python • FastAPI • PyTorch • TensorFlow • TypeScript • React • Next.js • AWS • Docker • PostgreSQL • MongoDB • Linux • GitHub Actions • CI/CD • Redis • 
+                Python • FastAPI • PyTorch • TensorFlow • TypeScript • React •
+                Next.js • AWS • Docker • PostgreSQL • MongoDB • Linux • GitHub
+                Actions • CI/CD • Redis • Python • FastAPI • PyTorch •
+                TensorFlow • TypeScript • React • Next.js • AWS • Docker •
+                PostgreSQL • MongoDB • Linux • GitHub Actions • CI/CD • Redis •
               </span>
               <span className="font-grotesk font-bold text-[#EFF4FF] text-[28px] md:text-[40px] whitespace-nowrap uppercase">
-                Python • FastAPI • PyTorch • TensorFlow • TypeScript • React • Next.js • AWS • Docker • PostgreSQL • MongoDB • Linux • GitHub Actions • CI/CD • Redis • Python • FastAPI • PyTorch • TensorFlow • TypeScript • React • Next.js • AWS • Docker • PostgreSQL • MongoDB • Linux • GitHub Actions • CI/CD • Redis • 
+                Python • FastAPI • PyTorch • TensorFlow • TypeScript • React •
+                Next.js • AWS • Docker • PostgreSQL • MongoDB • Linux • GitHub
+                Actions • CI/CD • Redis • Python • FastAPI • PyTorch •
+                TensorFlow • TypeScript • React • Next.js • AWS • Docker •
+                PostgreSQL • MongoDB • Linux • GitHub Actions • CI/CD • Redis •
               </span>
             </div>
           </div>
@@ -478,10 +504,18 @@ export default function Home() {
           <div className="py-2 md:py-3 w-full border-b border-white/5 border-dashed">
             <div className="flex w-fit animate-marquee-left-140">
               <span className="font-grotesk font-bold text-[#EFF4FF] text-[28px] md:text-[40px] whitespace-nowrap uppercase">
-                Python • FastAPI • PyTorch • TensorFlow • TypeScript • React • Next.js • AWS • Docker • PostgreSQL • MongoDB • Linux • GitHub Actions • CI/CD • Redis • Python • FastAPI • PyTorch • TensorFlow • TypeScript • React • Next.js • AWS • Docker • PostgreSQL • MongoDB • Linux • GitHub Actions • CI/CD • Redis • 
+                Python • FastAPI • PyTorch • TensorFlow • TypeScript • React •
+                Next.js • AWS • Docker • PostgreSQL • MongoDB • Linux • GitHub
+                Actions • CI/CD • Redis • Python • FastAPI • PyTorch •
+                TensorFlow • TypeScript • React • Next.js • AWS • Docker •
+                PostgreSQL • MongoDB • Linux • GitHub Actions • CI/CD • Redis •
               </span>
               <span className="font-grotesk font-bold text-[#EFF4FF] text-[28px] md:text-[40px] whitespace-nowrap uppercase">
-                Python • FastAPI • PyTorch • TensorFlow • TypeScript • React • Next.js • AWS • Docker • PostgreSQL • MongoDB • Linux • GitHub Actions • CI/CD • Redis • Python • FastAPI • PyTorch • TensorFlow • TypeScript • React • Next.js • AWS • Docker • PostgreSQL • MongoDB • Linux • GitHub Actions • CI/CD • Redis • 
+                Python • FastAPI • PyTorch • TensorFlow • TypeScript • React •
+                Next.js • AWS • Docker • PostgreSQL • MongoDB • Linux • GitHub
+                Actions • CI/CD • Redis • Python • FastAPI • PyTorch •
+                TensorFlow • TypeScript • React • Next.js • AWS • Docker •
+                PostgreSQL • MongoDB • Linux • GitHub Actions • CI/CD • Redis •
               </span>
             </div>
           </div>
