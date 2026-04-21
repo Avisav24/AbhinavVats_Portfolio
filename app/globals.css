@@ -113,30 +113,34 @@ button,
   }
 }
 
-@keyframes marquee-right {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(100vw);
-  }
-}
-
 @keyframes marquee-left {
   0% {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-100vw);
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
   }
 }
 
 @layer utilities {
-  .animate-marquee-right {
-    animation: marquee-right 30s linear infinite;
+  .animate-marquee-left-20 {
+    animation: marquee-left 20s linear infinite;
   }
   
-  .animate-marquee-left {
+  .animate-marquee-right-25 {
+    animation: marquee-right 25s linear infinite;
+  }
+  
+  .animate-marquee-left-30 {
     animation: marquee-left 30s linear infinite;
   }
 }

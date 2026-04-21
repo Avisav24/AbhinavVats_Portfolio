@@ -406,36 +406,48 @@ export default function Home() {
               </span>
             </h2>
           </motion.div>
+        </div>
 
-          <div className="mb-14 w-full overflow-hidden bg-[#010828]">
-            {/* Line 1: Green, scrolling right */}
-            <div className="overflow-hidden py-3 md:py-4">
-              <div className="flex gap-8 animate-marquee-right">
-                <span className="font-grotesk font-bold text-[#6FFF00] text-[24px] md:text-[40px] whitespace-nowrap">
-                  SKILLS SKILLS SKILLS SKILLS SKILLS SKILLS SKILLS SKILLS SKILLS SKILLS
-                </span>
-              </div>
-            </div>
-
-            {/* Line 2: White, scrolling left */}
-            <div className="overflow-hidden py-3 md:py-4">
-              <div className="flex gap-8 animate-marquee-left">
-                <span className="font-grotesk font-bold text-[#EFF4FF] text-[20px] md:text-[32px] whitespace-nowrap">
-                  Python • FastAPI • PyTorch • TensorFlow • TypeScript • React • Next.js • AWS • Docker • PostgreSQL • MongoDB • Linux • GitHub Actions • CI/CD • Redis
-                </span>
-              </div>
-            </div>
-
-            {/* Line 3: White, scrolling right */}
-            <div className="overflow-hidden py-3 md:py-4">
-              <div className="flex gap-8 animate-marquee-right">
-                <span className="font-grotesk font-bold text-[#EFF4FF] text-[20px] md:text-[32px] whitespace-nowrap">
-                  Python • FastAPI • PyTorch • TensorFlow • TypeScript • React • Next.js • AWS • Docker • PostgreSQL • MongoDB • Linux • GitHub Actions • CI/CD • Redis
-                </span>
-              </div>
+        {/* Full screen edge-to-edge ticker without gaps */}
+        <div className="w-full bg-[#010828] py-0 overflow-hidden flex flex-col gap-0">
+          {/* Line 1: Green, scrolling left - Speed 20s */}
+          <div className="py-2 md:py-3 w-full border-y border-white/5 border-dashed">
+            <div className="flex w-fit animate-marquee-left-20">
+              <span className="font-grotesk font-bold text-[#6FFF00] text-[24px] md:text-[40px] whitespace-nowrap pl-8">
+                SKILLS SKILLS SKILLS SKILLS SKILLS SKILLS SKILLS SKILLS SKILLS SKILLS SKILLS SKILLS SKILLS SKILLS SKILLS SKILLS SKILLS SKILLS SKILLS SKILLS 
+              </span>
+              <span className="font-grotesk font-bold text-[#6FFF00] text-[24px] md:text-[40px] whitespace-nowrap pl-8">
+                SKILLS SKILLS SKILLS SKILLS SKILLS SKILLS SKILLS SKILLS SKILLS SKILLS SKILLS SKILLS SKILLS SKILLS SKILLS SKILLS SKILLS SKILLS SKILLS SKILLS 
+              </span>
             </div>
           </div>
 
+          {/* Line 2: White, scrolling right - Speed 25s */}
+          <div className="py-2 md:py-3 w-full border-b border-white/5 border-dashed">
+            <div className="flex w-fit animate-marquee-right-25">
+              <span className="font-grotesk font-bold text-[#EFF4FF] text-[20px] md:text-[32px] whitespace-nowrap pl-8">
+                Python • FastAPI • PyTorch • TensorFlow • TypeScript • React • Next.js • AWS • Docker • PostgreSQL • MongoDB • Linux • GitHub Actions • CI/CD • Redis • Python • FastAPI • PyTorch • TensorFlow • TypeScript • React • Next.js • AWS • Docker • PostgreSQL • MongoDB • Linux • GitHub Actions • CI/CD • Redis 
+              </span>
+              <span className="font-grotesk font-bold text-[#EFF4FF] text-[20px] md:text-[32px] whitespace-nowrap pl-8">
+                Python • FastAPI • PyTorch • TensorFlow • TypeScript • React • Next.js • AWS • Docker • PostgreSQL • MongoDB • Linux • GitHub Actions • CI/CD • Redis • Python • FastAPI • PyTorch • TensorFlow • TypeScript • React • Next.js • AWS • Docker • PostgreSQL • MongoDB • Linux • GitHub Actions • CI/CD • Redis 
+              </span>
+            </div>
+          </div>
+
+          {/* Line 3: White, scrolling left - Speed 30s */}
+          <div className="py-2 md:py-3 w-full border-b border-white/5 border-dashed">
+            <div className="flex w-fit animate-marquee-left-30">
+              <span className="font-grotesk font-bold text-[#EFF4FF] text-[20px] md:text-[32px] whitespace-nowrap pl-8">
+                Python • FastAPI • PyTorch • TensorFlow • TypeScript • React • Next.js • AWS • Docker • PostgreSQL • MongoDB • Linux • GitHub Actions • CI/CD • Redis • Python • FastAPI • PyTorch • TensorFlow • TypeScript • React • Next.js • AWS • Docker • PostgreSQL • MongoDB • Linux • GitHub Actions • CI/CD • Redis 
+              </span>
+              <span className="font-grotesk font-bold text-[#EFF4FF] text-[20px] md:text-[32px] whitespace-nowrap pl-8">
+                Python • FastAPI • PyTorch • TensorFlow • TypeScript • React • Next.js • AWS • Docker • PostgreSQL • MongoDB • Linux • GitHub Actions • CI/CD • Redis • Python • FastAPI • PyTorch • TensorFlow • TypeScript • React • Next.js • AWS • Docker • PostgreSQL • MongoDB • Linux • GitHub Actions • CI/CD • Redis 
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div className="w-full max-w-[1831px] px-6 md:px-12 lg:px-24 mt-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
             {[
               {
