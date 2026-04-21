@@ -23,7 +23,7 @@ export default function Navbar() {
   return (
     <nav
       ref={navRef}
-      className="fixed top-0 left-0 w-full h-[72px] z-[100] bg-bgMain/88 backdrop-blur-[16px] transition-colors duration-300"
+      className="fixed top-0 left-0 w-full h-[72px] z-[100] bg-[#010828]/95 backdrop-blur-[20px] transition-colors duration-300 border-b border-white/10"
     >
       <div className="max-w-[1280px] mx-auto px-6 h-full flex justify-between items-center transition-all duration-300 group-autoscroll:.has-border">
         <div className="font-display font-bold text-[24px]">
