@@ -199,26 +199,6 @@ export default function Home() {
                 </h1>
               </motion.div>
 
-              {/* Glitch Role Roller */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.5 }}
-                className="mt-6 h-[42px] md:h-[56px] overflow-hidden relative w-fit mx-auto px-8 md:px-12 bg-transparent drop-shadow-[0_4px_16px_rgba(0,0,0,0.8)]"
-              >
-                <div className="glitch-roller font-condiment text-[24px] md:text-[48px] text-[#6FFF00] lowercase capitalize [mask-image:radial-gradient(ellipse_at_center,black_58%,transparent_100%)] [-webkit-mask-image:radial-gradient(ellipse_at_center,black_58%,transparent_100%)]">
-                  <span className="block h-[42px] md:h-[56px] leading-[42px] md:leading-[56px]">
-                    Full Stack Dev
-                  </span>
-                  <span className="block h-[42px] md:h-[56px] leading-[42px] md:leading-[56px]">
-                    AI/ML Practitioner
-                  </span>
-                  <span className="block h-[42px] md:h-[56px] leading-[42px] md:leading-[56px]">
-                    Personal Portfolio
-                  </span>
-                </div>
-              </motion.div>
-
               {/* Resume Box - wide, centered below text */}
               <motion.a
                 href="https://drive.google.com/file/d/1fil5aEGxhIkwf7yfvw7RRGEsIjA264aL/view?usp=sharing"
@@ -226,7 +206,7 @@ export default function Home() {
                 rel="noreferrer"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.7 }}
+                transition={{ duration: 0.8, delay: 0.5 }}
                 className="mt-8 mx-auto w-full max-w-[320px] bg-white/10 backdrop-blur-[15px] border border-white/20 shadow-lg rounded-[8px] px-8 py-4 font-grotesk text-[16px] text-white hover:text-[#6FFF00] hover:border-[#6FFF00]/50 transition-all uppercase flex items-center justify-center gap-3"
               >
                 <svg
