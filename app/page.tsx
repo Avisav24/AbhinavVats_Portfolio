@@ -314,7 +314,13 @@ export default function Home() {
             </motion.p>
           </div>
 
-          <div className="flex flex-col lg:flex-row justify-between w-full mt-12 md:mt-24 gap-8 p-6 md:p-8 rounded-[8px] bg-[rgba(20,25,40,0.55)] backdrop-blur-[15px] border border-white/15 shadow-lg">
+          <div
+            className="flex flex-col lg:flex-row justify-between w-full mt-12 md:mt-24 gap-8 p-6 md:p-8 rounded-[8px] bg-[rgba(20,25,40,0.55)] backdrop-blur-[15px] border border-white/15 shadow-lg"
+            style={{
+              backdropFilter: "blur(15px)",
+              WebkitBackdropFilter: "blur(15px)",
+            }}
+          >
             <div className="flex flex-col space-y-6 flex-1 text-[#EFF4FF]">
               <div>
                 <h3 className="font-grotesk text-[24px] text-[#6FFF00] mb-2">
