@@ -443,21 +443,35 @@ export default function Home() {
                 damping={50}
                 stiffness={380}
                 numCopies={8}
-                parallaxClassName="py-4 md:py-6"
+                parallaxClassName="py-2 md:py-3"
                 scrollerClassName="flex items-center justify-center text-center"
                 parallaxStyle={{ width: "100%" }}
                 scrollerStyle={{ width: "100%" }}
               />
               <ScrollVelocity
                 texts={[
-                  "Python  •  FastAPI  •  PyTorch  •  TensorFlow  •  TypeScript  •  React  •  Next.js  •  AWS  •  Docker  •  PostgreSQL  •  MongoDB",
+                  "Python  •  FastAPI  •  PyTorch  •  TensorFlow  •  TypeScript  •  React  •  Next.js  •  AWS",
                 ]}
                 velocity={80}
                 className="font-grotesk font-bold text-[#EFF4FF] text-[32px] md:text-[56px] drop-shadow-[0_0_12px_rgba(111,255,0,0.18)]"
                 damping={50}
                 stiffness={380}
                 numCopies={8}
-                parallaxClassName="py-4 md:py-6"
+                parallaxClassName="py-2 md:py-3"
+                scrollerClassName="flex items-center justify-center text-center"
+                parallaxStyle={{ width: "100%" }}
+                scrollerStyle={{ width: "100%" }}
+              />
+              <ScrollVelocity
+                texts={[
+                  "Docker  •  PostgreSQL  •  MongoDB  •  Linux  •  GitHub Actions  •  CI/CD  •  Redis",
+                ]}
+                velocity={80}
+                className="font-grotesk font-bold text-[#EFF4FF] text-[32px] md:text-[56px] drop-shadow-[0_0_12px_rgba(111,255,0,0.18)]"
+                damping={50}
+                stiffness={380}
+                numCopies={8}
+                parallaxClassName="py-2 md:py-3"
                 scrollerClassName="flex items-center justify-center text-center"
                 parallaxStyle={{ width: "100%" }}
                 scrollerStyle={{ width: "100%" }}
