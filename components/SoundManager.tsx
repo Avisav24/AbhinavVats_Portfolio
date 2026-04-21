@@ -5,6 +5,7 @@ import { Volume2, VolumeX } from "lucide-react";
 
 export default function SoundManager() {
   const [isPlaying, setIsPlaying] = useState(true);
+  const [isVisible, setIsVisible] = useState(true);
   const isPlayingRef = useRef(true);
   const audioRef = useRef<HTMLAudioElement>(null);
   const audioCtxRef = useRef<AudioContext | null>(null);
@@ -63,7 +64,7 @@ export default function SoundManager() {
             setIsPlaying(true);
           })
           .catch(() => {
-            // Keep the toggle ON visually as requested, but wait for interaction to actually play
+            // Keep the state ON, but wait for interaction to actually play
             setIsPlaying(true);
             window.addEventListener("click", unlockAudio);
             window.addEventListener("touchstart", unlockAudio);
@@ -130,21 +131,13 @@ export default function SoundManager() {
     return () => window.removeEventListener("mouseover", handleMouseOver);
   }, []);
 
-  const toggle = (e: React.MouseEvent) => {
+  const handleRemove = (e: React.MouseEvent) => {
     e.stopPropagation();
-    if (!audioRef.current) return;
-
-    if (isPlaying) {
+    if (audioRef.current) {
       audioRef.current.pause();
-      setIsPlaying(false);
-    } else {
-      audioRef.current.volume = 0.5;
-      audioRef.current.play().catch(console.error);
-      if (audioCtxRef.current?.state === "suspended") {
-        audioCtxRef.current.resume();
-      }
-      setIsPlaying(true);
     }
+    setIsPlaying(false);
+    setIsVisible(false);
   };
 
   return (
@@ -159,17 +152,16 @@ export default function SoundManager() {
         playsInline
       />
 
-      <button
-        onClick={toggle}
-        className="fixed bottom-8 right-8 z-[100] w-12 h-12 rounded-[12px] bg-[#010828]/60 backdrop-blur-xl border border-white/10 flex items-center justify-center hover:bg-[#6FFF00]/10 hover:border-[#6FFF00]/30 transition-all active:scale-95 group shadow-2xl"
-        aria-label="Toggle Sound"
-      >
-        {isPlaying ? (
+      {isVisible && (
+        <button
+          onClick={handleRemove}
+          className="fixed bottom-8 right-8 z-[100] w-12 h-12 rounded-[12px] bg-[#010828]/60 backdrop-blur-xl border border-white/10 flex items-center justify-center hover:bg-[#6FFF00]/10 hover:border-[#6FFF00]/30 transition-all active:scale-95 group shadow-2xl"
+          aria-label="Remove Sound"
+          title="Remove Ambient Music"
+        >
           <Volume2 className="w-5 h-5 text-[#6FFF00] group-hover:scale-110 transition-transform" />
-        ) : (
-          <VolumeX className="w-5 h-5 text-white/40 group-hover:text-white/60 transition-colors" />
-        )}
-      </button>
+        </button>
+      )}
     </>
   );
 }
