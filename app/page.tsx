@@ -188,6 +188,12 @@ export default function Home() {
                         fontStyle: "italic",
                         fontFamily: "Playfair Display",
                         fontSize: "1.4em",
+                        background: "rgba(255, 255, 255, 0.1)",
+                        backdropFilter: "blur(10px)",
+                        border: "1px solid rgba(255, 255, 255, 0.2)",
+                        padding: "8px 12px",
+                        borderRadius: "8px",
+                        boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.2)",
                       }}
                       className="inline-block"
                     >
@@ -219,6 +225,12 @@ export default function Home() {
                         fontStyle: "italic",
                         fontFamily: "Playfair Display",
                         fontSize: "1.4em",
+                        background: "rgba(255, 255, 255, 0.1)",
+                        backdropFilter: "blur(10px)",
+                        border: "1px solid rgba(255, 255, 255, 0.2)",
+                        padding: "8px 12px",
+                        borderRadius: "8px",
+                        boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.2)",
                       }}
                       className="inline-block"
                     >
