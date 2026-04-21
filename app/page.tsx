@@ -407,58 +407,6 @@ export default function Home() {
             </h2>
           </motion.div>
 
-          <div className="mb-14 w-full">
-            <div className="flex flex-col gap-0">
-              <ScrollVelocity
-                texts={[
-                  <span
-                    key="skills"
-                    className="font-grotesk font-bold text-[#6FFF00] text-[48px] md:text-[80px]"
-                  >
-                    SKILLS
-                  </span>,
-                ]}
-                velocity={80}
-                className="font-grotesk font-bold text-[#EFF4FF] text-[48px] md:text-[80px] drop-shadow-[0_0_12px_rgba(111,255,0,0.18)]"
-                damping={50}
-                stiffness={380}
-                numCopies={8}
-                parallaxClassName="py-2 md:py-3"
-                scrollerClassName="flex items-center justify-center text-center"
-                parallaxStyle={{ width: "100%" }}
-                scrollerStyle={{ width: "100%" }}
-              />
-              <ScrollVelocity
-                texts={[
-                  "Python  •  FastAPI  •  PyTorch  •  TensorFlow  •  TypeScript  •  React  •  Next.js  •  AWS",
-                ]}
-                velocity={-80}
-                className="font-grotesk font-bold text-[#EFF4FF] text-[32px] md:text-[56px] drop-shadow-[0_0_12px_rgba(111,255,0,0.18)]"
-                damping={50}
-                stiffness={380}
-                numCopies={8}
-                parallaxClassName="py-2 md:py-3"
-                scrollerClassName="flex items-center justify-center text-center"
-                parallaxStyle={{ width: "100%" }}
-                scrollerStyle={{ width: "100%" }}
-              />
-              <ScrollVelocity
-                texts={[
-                  "Docker  •  PostgreSQL  •  MongoDB  •  Linux  •  GitHub Actions  •  CI/CD  •  Redis",
-                ]}
-                velocity={80}
-                className="font-grotesk font-bold text-[#EFF4FF] text-[32px] md:text-[56px] drop-shadow-[0_0_12px_rgba(111,255,0,0.18)]"
-                damping={50}
-                stiffness={380}
-                numCopies={8}
-                parallaxClassName="py-2 md:py-3"
-                scrollerClassName="flex items-center justify-center text-center"
-                parallaxStyle={{ width: "100%" }}
-                scrollerStyle={{ width: "100%" }}
-              />
-            </div>
-          </div>
-
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
             {[
               {
