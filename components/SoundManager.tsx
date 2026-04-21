@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { Volume2, VolumeX } from "lucide-react";
 
 export default function SoundManager() {
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(true);
   const audioRef = useRef<HTMLAudioElement>(null);
   const audioCtxRef = useRef<AudioContext | null>(null);
   const isInitialized = useRef(false);
@@ -34,7 +34,6 @@ export default function SoundManager() {
           await audioRef.current.play();
           setIsPlaying(true);
           isInitialized.current = true;
-          // Only remove listeners if successfully playing
           removeUnlockListeners();
         } catch (err) {
           console.warn("Ambient audio blocked. Waiting for user gesture...", err);
@@ -48,9 +47,18 @@ export default function SoundManager() {
       window.removeEventListener("keydown", unlockAudio);
     };
 
-    window.addEventListener("click", unlockAudio);
-    window.addEventListener("touchstart", unlockAudio);
-    window.addEventListener("keydown", unlockAudio);
+    // Try to play immediately
+    initAudioContext();
+    if (audioRef.current && !isInitialized.current) {
+      audioRef.current.volume = 0.3;
+      audioRef.current.play().catch(() => {
+        // If autoplay fails, wait for user gesture
+        window.addEventListener("click", unlockAudio);
+        window.addEventListener("touchstart", unlockAudio);
+        window.addEventListener("keydown", unlockAudio);
+      });
+      isInitialized.current = true;
+    }
 
     // Sync state with audio element
     const audio = audioRef.current;
@@ -121,6 +129,8 @@ export default function SoundManager() {
         ref={audioRef}
         src="/sounds/ambient.mp3"
         loop
+        autoPlay
+        muted={false}
         preload="auto"
         playsInline
       />
