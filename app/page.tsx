@@ -186,12 +186,7 @@ export default function Home() {
                 transition={{ duration: 0.8, delay: 0.5 }}
                 className="mt-6 h-[42px] md:h-[56px] overflow-hidden relative w-fit mx-auto px-8 md:px-12 bg-transparent drop-shadow-[0_4px_16px_rgba(0,0,0,0.8)]"
               >
-                <div className="pointer-events-none absolute inset-0 z-10 rounded-[12px] bg-[radial-gradient(ellipse_at_center,rgba(1,8,40,0)_38%,rgba(1,8,40,0.18)_72%,rgba(1,8,40,0.42)_100%)]" />
-                <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-10 bg-gradient-to-r from-[#010828]/70 to-transparent md:w-14" />
-                <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-10 bg-gradient-to-l from-[#010828]/70 to-transparent md:w-14" />
-                <div className="pointer-events-none absolute inset-x-0 top-0 z-10 h-4 bg-gradient-to-b from-[#010828]/70 to-transparent md:h-5" />
-                <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-4 bg-gradient-to-t from-[#010828]/70 to-transparent md:h-5" />
-                <div className="glitch-roller font-condiment text-[24px] md:text-[48px] text-[#6FFF00] lowercase capitalize">
+                <div className="glitch-roller font-condiment text-[24px] md:text-[48px] text-[#6FFF00] lowercase capitalize [mask-image:radial-gradient(ellipse_at_center,black_58%,transparent_100%)] [-webkit-mask-image:radial-gradient(ellipse_at_center,black_58%,transparent_100%)]">
                   <span className="block h-[42px] md:h-[56px] leading-[42px] md:leading-[56px]">
                     Full Stack Dev
                   </span>
