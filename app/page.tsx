@@ -174,7 +174,7 @@ export default function Home() {
                 <h1 className="font-grotesk text-[32px] sm:text-[48px] md:text-[65px] lg:text-[80px] leading-[1.1] sm:leading-[1.15] drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)] [text-shadow:0_2px_8px_rgba(0,0,0,0.4)] px-4">
                   <span className="block">
                     <BlurText
-                      text="Beyond Earth"
+                      text="Beyond "
                       className="justify-center"
                       delay={140}
                       animateBy="words"
@@ -183,10 +183,22 @@ export default function Home() {
                       rootMargin="-150px"
                       stepDuration={0.32}
                     />
+                    <span style={{ fontStyle: 'italic', fontFamily: 'Times New Roman' }} className="inline-block">
+                      <BlurText
+                        text="Earth"
+                        className="justify-center"
+                        delay={140}
+                        animateBy="words"
+                        direction="top"
+                        threshold={0.15}
+                        rootMargin="-150px"
+                        stepDuration={0.32}
+                      />
+                    </span>
                   </span>
                   <span className="block">
                     <BlurText
-                      text="and the limits of the known"
+                      text="and the "
                       className="justify-center"
                       delay={110}
                       animateBy="words"
@@ -195,6 +207,30 @@ export default function Home() {
                       rootMargin="-150px"
                       stepDuration={0.32}
                     />
+                    <span style={{ fontStyle: 'italic', fontFamily: 'Times New Roman' }} className="inline-block">
+                      <BlurText
+                        text="limits"
+                        className="justify-center"
+                        delay={110}
+                        animateBy="words"
+                        direction="bottom"
+                        threshold={0.15}
+                        rootMargin="-150px"
+                        stepDuration={0.32}
+                      />
+                    </span>
+                    <span>
+                      <BlurText
+                        text=" of the known"
+                        className="justify-center"
+                        delay={110}
+                        animateBy="words"
+                        direction="bottom"
+                        threshold={0.15}
+                        rootMargin="-150px"
+                        stepDuration={0.32}
+                      />
+                    </span>
                   </span>
                 </h1>
               </motion.div>
