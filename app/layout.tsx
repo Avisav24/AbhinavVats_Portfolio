@@ -37,9 +37,7 @@ export default function RootLayout({
         <LoadingScreen />
         <SoundManager />
         <CustomCursor />
-        <div
-          className="fixed inset-0 z-50 pointer-events-none mix-blend-lighten opacity-60 bg-[url('/texture.png')] bg-cover bg-center"
-        />
+        <div className="fixed inset-0 z-50 pointer-events-none mix-blend-lighten opacity-60 bg-[url('/texture.png')] bg-cover bg-center" />
         <LenisWrapper>{children}</LenisWrapper>
       </body>
     </html>

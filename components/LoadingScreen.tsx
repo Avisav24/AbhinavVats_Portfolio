@@ -5,7 +5,6 @@ import { motion, AnimatePresence } from "framer-motion";
 
 export default function LoadingScreen() {
   const [isLoading, setIsLoading] = useState(true);
-  const [isReady, setIsReady] = useState(false);
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
@@ -33,9 +32,14 @@ export default function LoadingScreen() {
       {isLoading && (
         <motion.div
           key="loader"
-          initial={{ opacity: 1 }}
+          initial={{ opacity: 0, scale: 0.88, filter: "blur(12px)" }}
+          animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
           exit={{ opacity: 0, scale: 1.1, filter: "blur(10px)" }}
-          transition={{ duration: 0.8, ease: "easeInOut" }}
+          transition={{
+            opacity: { duration: 0.55, ease: "easeOut" },
+            scale: { duration: 0.85, ease: [0.22, 1, 0.36, 1] },
+            filter: { duration: 0.7, ease: "easeOut" },
+          }}
           className="fixed inset-0 z-[99999] flex flex-col items-center justify-center bg-[#010828] text-[#6FFF00] font-mono overflow-hidden"
         >
           {/* Starfield background */}
@@ -47,7 +51,16 @@ export default function LoadingScreen() {
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_0%,_#010828_100%)] z-10" />
           </div>
 
-          <div className="relative z-10 flex flex-col items-center">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.96, y: 12 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{
+              delay: 0.15,
+              duration: 0.7,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+            className="relative z-10 flex flex-col items-center"
+          >
             {/* Spinning space radar / loader */}
             <motion.div
               animate={{ rotate: 360 }}
@@ -65,9 +78,9 @@ export default function LoadingScreen() {
                 Deep Space Protocol
               </span>
             </h2>
-            
+
             <div className="w-64 h-1 bg-white/10 rounded-full overflow-hidden relative">
-              <motion.div 
+              <motion.div
                 className="absolute top-0 left-0 h-full bg-[#6FFF00] shadow-[0_0_10px_#6FFF00]"
                 style={{ width: `${progress}%` }}
               />
@@ -75,7 +88,7 @@ export default function LoadingScreen() {
             <div className="mt-2 text-[10px] tracking-widest text-[#EFF4FF]/60 uppercase">
               SYS. BOOT {Math.floor(progress)}%
             </div>
-          </div>
+          </motion.div>
         </motion.div>
       )}
     </AnimatePresence>

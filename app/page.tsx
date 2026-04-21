@@ -3,6 +3,8 @@
 import React from "react";
 import { Mail, ChevronRight } from "lucide-react";
 import { motion } from "framer-motion";
+import ScrollVelocity from "@/components/ScrollVelocity";
+import BlurText from "@/components/BlurText";
 
 // Simple custom SVG icons since brand icons were removed from lucide-react
 const Twitter = ({ className }: { className?: string }) => (
@@ -169,14 +171,28 @@ export default function Home() {
                   ease: "easeInOut",
                 }}
               >
-                <motion.h1
-                  initial={{ y: 50, opacity: 0, filter: "blur(10px)" }}
-                  animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
-                  transition={{ duration: 0.8, delay: 0.2 }}
-                  className="font-grotesk text-[32px] sm:text-[48px] md:text-[65px] lg:text-[80px] leading-[1.1] sm:leading-[1.15] drop-shadow-[0_8px_24px_rgba(0,0,0,1)] [text-shadow:0_4px_16px_rgba(0,0,0,0.8)] px-4"
-                >
-                  Beyond Earth <br /> and the limits of the known
-                </motion.h1>
+                <h1 className="font-grotesk text-[32px] sm:text-[48px] md:text-[65px] lg:text-[80px] leading-[1.1] sm:leading-[1.15] drop-shadow-[0_8px_24px_rgba(0,0,0,1)] [text-shadow:0_4px_16px_rgba(0,0,0,0.8)] px-4">
+                  <BlurText
+                    text="Beyond Earth"
+                    className="justify-center"
+                    delay={140}
+                    animateBy="words"
+                    direction="top"
+                    threshold={0.1}
+                    rootMargin="0px"
+                    stepDuration={0.32}
+                  />
+                  <BlurText
+                    text="and the limits of the known"
+                    className="justify-center"
+                    delay={110}
+                    animateBy="words"
+                    direction="bottom"
+                    threshold={0.1}
+                    rootMargin="0px"
+                    stepDuration={0.32}
+                  />
+                </h1>
               </motion.div>
 
               {/* Glitch Role Roller */}
@@ -406,6 +422,23 @@ export default function Home() {
               </span>
             </h2>
           </motion.div>
+
+          <div className="mb-14 rounded-[12px] border border-white/10 bg-white/5 backdrop-blur-[18px] overflow-hidden">
+            <ScrollVelocity
+              texts={[
+                "Python  FastAPI  PyTorch  TensorFlow  Scikit-learn",
+                "TypeScript  React  Next.js  Node.js  Tailwind CSS",
+                "AWS  Docker  Linux  GitHub Actions  CI/CD  PostgreSQL  MongoDB",
+              ]}
+              velocity={58}
+              className="font-grotesk text-[#EFF4FF] drop-shadow-[0_0_12px_rgba(111,255,0,0.18)]"
+              damping={50}
+              stiffness={380}
+              numCopies={6}
+              parallaxClassName="py-4 md:py-5"
+              scrollerClassName="flex items-center"
+            />
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
             {[
