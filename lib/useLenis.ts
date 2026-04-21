@@ -21,9 +21,11 @@ export function useLenis() {
       wheelMultiplier: 1.2,
     });
 
-    gsap.ticker.add((time) => {
+    const raf = (time: number) => {
       lenis.raf(time * 1000);
-    });
+    };
+
+    gsap.ticker.add(raf);
 
     gsap.ticker.lagSmoothing(0);
 
@@ -32,7 +34,7 @@ export function useLenis() {
     }, 100);
 
     return () => {
-      gsap.ticker.remove((time) => lenis.raf(time * 1000));
+      gsap.ticker.remove(raf);
       lenis.destroy();
     };
   }, []);
