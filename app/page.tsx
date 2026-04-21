@@ -171,7 +171,7 @@ export default function Home() {
                   ease: "easeInOut",
                 }}
               >
-                <h1 className="font-grotesk text-[32px] sm:text-[48px] md:text-[65px] lg:text-[80px] leading-[1.1] sm:leading-[1.15] drop-shadow-[0_8px_24px_rgba(0,0,0,1)] [text-shadow:0_4px_16px_rgba(0,0,0,0.8)] px-4">
+                <h1 className="font-grotesk text-[32px] sm:text-[48px] md:text-[65px] lg:text-[80px] leading-[1.1] sm:leading-[1.15] drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)] [text-shadow:0_2px_8px_rgba(0,0,0,0.4)] px-4">
                   <span className="block">
                     <BlurText
                       text="Beyond Earth"
