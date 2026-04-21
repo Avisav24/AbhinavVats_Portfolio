@@ -179,8 +179,8 @@ export default function Home() {
                       delay={140}
                       animateBy="words"
                       direction="top"
-                      threshold={0.1}
-                      rootMargin="0px"
+                      threshold={0.15}
+                      rootMargin="-150px"
                       stepDuration={0.32}
                     />
                   </span>
@@ -191,8 +191,8 @@ export default function Home() {
                       delay={110}
                       animateBy="words"
                       direction="bottom"
-                      threshold={0.1}
-                      rootMargin="0px"
+                      threshold={0.15}
+                      rootMargin="-150px"
                       stepDuration={0.32}
                     />
                   </span>
@@ -427,20 +427,23 @@ export default function Home() {
             </h2>
           </motion.div>
 
-          <div className="mb-14 rounded-[12px] border border-white/10 bg-white/5 backdrop-blur-[18px] overflow-hidden">
+          <div className="mb-14 w-full">
             <ScrollVelocity
               texts={[
-                "Python  FastAPI  PyTorch  TensorFlow  Scikit-learn",
-                "TypeScript  React  Next.js  Node.js  Tailwind CSS",
-                "AWS  Docker  Linux  GitHub Actions  CI/CD  PostgreSQL  MongoDB",
+                <span key="skills" className="font-condiment text-[#6FFF00] text-[48px] md:text-[80px] font-bold">
+                  SKILLS
+                </span>,
+                "Python  •  FastAPI  •  PyTorch  •  TensorFlow  •  TypeScript  •  React  •  Next.js  •  AWS  •  Docker  •  PostgreSQL  •  MongoDB",
               ]}
-              velocity={58}
-              className="font-grotesk text-[#EFF4FF] drop-shadow-[0_0_12px_rgba(111,255,0,0.18)]"
+              velocity={50}
+              className="font-grotesk text-[#EFF4FF] text-[28px] md:text-[56px] drop-shadow-[0_0_12px_rgba(111,255,0,0.18)]"
               damping={50}
               stiffness={380}
               numCopies={6}
-              parallaxClassName="py-4 md:py-5"
-              scrollerClassName="flex items-center"
+              parallaxClassName="py-6 md:py-8"
+              scrollerClassName="flex items-center justify-center text-center"
+              parallaxStyle={{ width: "100%" }}
+              scrollerStyle={{ width: "100%" }}
             />
           </div>
 
