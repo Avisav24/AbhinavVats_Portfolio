@@ -187,6 +187,7 @@ export default function Home() {
                       style={{
                         fontStyle: "italic",
                         fontFamily: "Playfair Display",
+                        fontSize: "1.4em",
                       }}
                       className="inline-block"
                     >
@@ -217,6 +218,7 @@ export default function Home() {
                       style={{
                         fontStyle: "italic",
                         fontFamily: "Playfair Display",
+                        fontSize: "1.4em",
                       }}
                       className="inline-block"
                     >
